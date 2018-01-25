@@ -11,12 +11,14 @@ public class Servico {
     
     private String defeito;
     private String descricao;
+    private float orcamento;
     private LocalDate dataEntrada;
     private String ordemServico;
 
-    public Servico(String defeito, String descricao, LocalDate dataEntrada, String ordemServico) {
+    public Servico(String defeito, String descricao, float orcamento, LocalDate dataEntrada, String ordemServico) {
         this.defeito = defeito;
         this.descricao = descricao;
+        this.orcamento = orcamento;
         this.dataEntrada = dataEntrada;
         this.ordemServico = ordemServico;
     }
@@ -37,6 +39,14 @@ public class Servico {
         this.descricao = descricao;
     }
 
+    public float getOrcamento() {
+        return orcamento;
+    }
+
+    public void setOrcamento(float orcamento) {
+        this.orcamento = orcamento;
+    }
+
     public LocalDate getDataEntrada() {
         return dataEntrada;
     }
@@ -55,7 +65,7 @@ public class Servico {
 
     @Override
     public String toString() {
-        return "Servico{" + "defeito=" + defeito + ", descricao=" + descricao + ", dataEntrada=" + dataEntrada + ", ordemServico=" + ordemServico + '}';
+        return "Servico{" + "defeito=" + defeito + ", descricao=" + descricao + ", orcamento=" + orcamento + ", dataEntrada=" + dataEntrada + ", ordemServico=" + ordemServico + '}';
     }
-    
+
 }

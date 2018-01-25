@@ -11,15 +11,15 @@ public class Funcionario {
     
     private String nome;
     private String telefone;
-    private LocalDate dataPagamenoto;
+    private LocalDate salario;
     private LocalDate dataAdmissao;
     private String CPF;
 
-    public Funcionario(String nome, String telefone, LocalDate dataPagamenoto,
+    public Funcionario(String nome, String telefone, LocalDate salario,
             LocalDate dataAdmissao, String CPF) {
         this.nome = nome;
         this.telefone = telefone;
-        this.dataPagamenoto = dataPagamenoto;
+        this.salario = salario;
         this.dataAdmissao = dataAdmissao;
         this.CPF = CPF;
     }
@@ -41,11 +41,11 @@ public class Funcionario {
     }
 
     public LocalDate getDataPagamenoto() {
-        return dataPagamenoto;
+        return salario;
     }
 
-    public void setDataPagamenoto(LocalDate dataPagamenoto) {
-        this.dataPagamenoto = dataPagamenoto;
+    public void setDataPagamenoto(LocalDate salario) {
+        this.salario = salario;
     }
 
     public LocalDate getDataAdmissao() {
@@ -67,7 +67,7 @@ public class Funcionario {
     @Override
     public String toString() {
         return "Funcionario{" + "nome=" + nome + ", telefone=" + telefone +
-                ", dataPagamenoto=" + dataPagamenoto + ", dataAdmissao=" +
+                ", salario=" + salario + ", dataAdmissao=" +
                 dataAdmissao + ", CPF=" + CPF + '}';
     }
        

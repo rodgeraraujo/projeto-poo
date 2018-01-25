@@ -31,7 +31,8 @@ public class Fabrica {
 
     @Override
     public String toString() {
-        return "Fabrica{" + "nome=" + nome + ", ordemServico=" + ordemServico + '}';
+        return "Fabrica{" + "nome=" + nome + ", ordemServico=" + ordemServico +
+                '}';
     }
    
 }

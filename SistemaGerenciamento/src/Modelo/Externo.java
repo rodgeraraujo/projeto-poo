@@ -12,8 +12,10 @@ public class Externo extends Servico {
     private LocalDate horaInicio;
     private LocalDate horaTermino;
 
-    public Externo(LocalDate horaInicio, LocalDate horaTermino, String defeito, String descricao, LocalDate dataEntrada, String ordemServico) {
-        super(defeito, descricao, dataEntrada, ordemServico);
+    public Externo(LocalDate horaInicio, LocalDate horaTermino, String defeito,
+            String descricao, float orcamento, LocalDate dataEntrada,
+            String ordemServico) {
+        super(defeito, descricao, orcamento, dataEntrada, ordemServico);
         this.horaInicio = horaInicio;
         this.horaTermino = horaTermino;
     }
@@ -36,7 +38,8 @@ public class Externo extends Servico {
 
     @Override
     public String toString() {
-        return "Externo{" + "horaInicio=" + horaInicio + ", horaTermino=" + horaTermino + '}';
+        return "Externo{" + "horaInicio=" + horaInicio + ", horaTermino=" +
+                horaTermino + '}';
     }
     
 }

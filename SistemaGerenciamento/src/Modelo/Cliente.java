@@ -13,7 +13,8 @@ public class Cliente {
     private String  nome;
     private String telefone[];
 
-    public Cliente(String cpf, String rua, String bairro, int numero, String nome, String[] telefone) {
+    public Cliente(String cpf, String rua, String bairro, int numero,
+            String nome, String[] telefone) {
         this.cpf = cpf;
         this.rua = rua;
         this.bairro = bairro;
@@ -72,7 +73,9 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "CPF=" + cpf + ", rua=" + rua + ", bairro=" + bairro + ", numero=" + numero + ", nome=" + nome + ", telefone=" + telefone + '}';
+        return "Cliente{" + "CPF=" + cpf + ", rua=" + rua + ", bairro=" +
+                bairro + ", numero=" + numero + ", nome=" + nome + ", telefone="
+                + telefone + '}';
     }
     
     

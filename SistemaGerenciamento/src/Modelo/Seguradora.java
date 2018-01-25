@@ -31,7 +31,8 @@ public class Seguradora {
 
     @Override
     public String toString() {
-        return "Seguradora{" + "nome=" + nome + ", numChamado=" + numChamado + '}';
+        return "Seguradora{" + "nome=" + nome + ", numChamado=" + numChamado +
+                '}';
     }
    
    
