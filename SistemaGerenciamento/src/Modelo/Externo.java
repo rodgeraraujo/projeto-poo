@@ -12,10 +12,8 @@ public class Externo extends Servico {
     private LocalDate horaInicio;
     private LocalDate horaTermino;
 
-    public Externo(LocalDate horaInicio, LocalDate horaTermino, String defeito,
-            String descricao, float orcamento, LocalDate dataEntrada,
-            String ordemServico) {
-        super(defeito, descricao, orcamento, dataEntrada, ordemServico);
+    public Externo(LocalDate horaInicio, LocalDate horaTermino, String defeito, String descricao, float orcamento, LocalDate dataEntrada, String ordemServico, String estado) {
+        super(defeito, descricao, orcamento, dataEntrada, ordemServico, estado);
         this.horaInicio = horaInicio;
         this.horaTermino = horaTermino;
     }

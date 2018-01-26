@@ -14,13 +14,15 @@ public class Servico {
     private float orcamento;
     private LocalDate dataEntrada;
     private String ordemServico;
+    private String estado;
 
-    public Servico(String defeito, String descricao, float orcamento, LocalDate dataEntrada, String ordemServico) {
+    public Servico(String defeito, String descricao, float orcamento, LocalDate dataEntrada, String ordemServico, String estado) {
         this.defeito = defeito;
         this.descricao = descricao;
         this.orcamento = orcamento;
         this.dataEntrada = dataEntrada;
         this.ordemServico = ordemServico;
+        this.estado = estado;
     }
 
     public String getDefeito() {
@@ -29,6 +31,14 @@ public class Servico {
 
     public void setDefeito(String defeito) {
         this.defeito = defeito;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getDescricao() {

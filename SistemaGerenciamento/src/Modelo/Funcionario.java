@@ -11,11 +11,11 @@ public class Funcionario {
     
     private String nome;
     private String telefone;
-    private LocalDate salario;
+    private float salario;
     private LocalDate dataAdmissao;
     private String CPF;
 
-    public Funcionario(String nome, String telefone, LocalDate salario,
+    public Funcionario(String nome, String telefone, float salario,
             LocalDate dataAdmissao, String CPF) {
         this.nome = nome;
         this.telefone = telefone;
@@ -40,11 +40,11 @@ public class Funcionario {
         this.telefone = telefone;
     }
 
-    public LocalDate getDataPagamenoto() {
+    public float getSalario() {
         return salario;
     }
 
-    public void setDataPagamenoto(LocalDate salario) {
+    public void setDataPagamenoto(float salario) {
         this.salario = salario;
     }
 
