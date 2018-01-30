@@ -17,6 +17,8 @@ public class Servico {
     private String ordemServico;
     private String estado;
     private Peca[] pecas;
+    private Equipamento[] equipamento;
+    private Funcionario[] funcionario;
 
     public Servico(String defeito, String descricao, float orcamento,
            LocalDate dataEntrada, String ordemServico, String estado,

@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class Caixa {
    private float saldo;
    private LocalDate data;
+   private Funcionario[] funcionario;
 
     public Caixa(float saldo, LocalDate data) {
         this.saldo = saldo;

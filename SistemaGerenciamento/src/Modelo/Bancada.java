@@ -8,6 +8,8 @@ import java.time.LocalDate;
 
 public class Bancada extends Servico{
     private String tipo;
+    private Seguradora[] seguradora;
+    private Fabrica[] fabrica;
 
     public Bancada(String tipo, String defeito, String descricao,
            float orcamento, LocalDate dataEntrada, String ordemServico,
