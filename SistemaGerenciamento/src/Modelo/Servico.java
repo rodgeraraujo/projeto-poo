@@ -6,6 +6,7 @@
 package Modelo;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Servico {
     
@@ -15,14 +16,18 @@ public class Servico {
     private LocalDate dataEntrada;
     private String ordemServico;
     private String estado;
+    private Peca[] pecas;
 
-    public Servico(String defeito, String descricao, float orcamento, LocalDate dataEntrada, String ordemServico, String estado) {
+    public Servico(String defeito, String descricao, float orcamento,
+           LocalDate dataEntrada, String ordemServico, String estado,
+           Peca[] pecas) {
         this.defeito = defeito;
         this.descricao = descricao;
         this.orcamento = orcamento;
         this.dataEntrada = dataEntrada;
         this.ordemServico = ordemServico;
         this.estado = estado;
+        this.pecas = pecas;
     }
 
     public String getDefeito() {
@@ -73,9 +78,20 @@ public class Servico {
         this.ordemServico = ordemServico;
     }
 
-    @Override
-    public String toString() {
-        return "Servico{" + "defeito=" + defeito + ", descricao=" + descricao + ", orcamento=" + orcamento + ", dataEntrada=" + dataEntrada + ", ordemServico=" + ordemServico + '}';
+    public Peca[] getPecas() {
+        return pecas;
     }
 
+    public void setPecas(Peca[] pecas) {
+        this.pecas = pecas;
+    }
+
+    @Override
+    public String toString() {
+        return "Servico{" + "defeito=" + defeito + ", descricao=" + descricao +
+               ", orcamento=" + orcamento + ", dataEntrada=" + dataEntrada +
+               ", ordemServico=" + ordemServico + ", estado=" + estado +
+               ", pecas=" + Arrays.toString(pecas) + '}';
+    }
+    
 }
