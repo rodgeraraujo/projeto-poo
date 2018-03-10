@@ -43,6 +43,9 @@ public class Main {
                                             "Login bem-sucedido!",
                                             "Successful", 
                                             JOptionPane.INFORMATION_MESSAGE);
+               
+               //Função para construir menu textual
+               menuConstrutor(userCode);
             } else {
                 System.out.println("Falha na autenticação.");
                 JOptionPane.showMessageDialog(null,
@@ -53,5 +56,22 @@ public class Main {
         } else {
             System.out.println("Login cancelado.");
         }
+    }
+    
+    //Menu textual construtor
+    private static void menuConstrutor(String userCode) {
+        System.out.println("    Seja bem-vindo " + userCode);
+        System.out.print(
+                "┌───────────────────────────────┐"
+                + "\n│  Gerência Oficina Eletrônica  │\n"
+                + "│  ---------------------------  │\n"
+                + "│          Version 1.0          │\n"
+                + "└┬=============================┬┘\n"
+                + " │  Use as instruções baixo    │\n"
+                + " │    Digitando o código ↓     │\n"
+                + " -------------------------------\n"
+                + " │ • Cadastrar funcionário [1] │\n"
+                + " │ • Cadastrar cliente [2]     │\n "
+                + "└─────────────────────────────┘\n");
     }
 }
