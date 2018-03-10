@@ -5,6 +5,11 @@
 
 package Visao;
 
+import Modelo.Servico;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -60,6 +65,16 @@ public class Main {
     
     //Menu textual construtor
     private static void menuConstrutor(String userCode) {
+
+        Scanner entrada = new Scanner(System.in);
+        
+        List<Servico> servicos = new ArrayList();
+        
+        int ordemServico = 0;
+        
+        int choice = 1;
+        
+        while(choice !=0){
         System.out.println("    Seja bem-vindo " + userCode);
         System.out.print(
                 "┌───────────────────────────────┐"
@@ -70,8 +85,31 @@ public class Main {
                 + " │  Use as instruções baixo    │\n"
                 + " │    Digitando o código ↓     │\n"
                 + " -------------------------------\n"
-                + " │ • Cadastrar funcionário [1] │\n"
-                + " │ • Cadastrar cliente [2]     │\n "
+                + " │ • Cadastrar serviço [1] │\n"
+                + " │ • Consultar serviço [2]     │\n "
+                + " │ • Inativar serviço [3]     │\n "
+                + " │ • Fechar Sistema [0]     │\n "
                 + "└─────────────────────────────┘\n");
+        choice = entrada.nextInt();
+        if(choice == 1){
+            System.out.println("Digite o defeito do equipamento: ");
+            String defeito = entrada.next();
+            
+            System.out.println("Digite a descriçaõ do serviço: ");
+            String descricao =  entrada.next();
+            
+            System.out.println("Digite o valor do orçamento: ");
+            float orcamento = entrada.nextFloat();
+            
+            LocalDate dataEntrada = LocalDate.now();
+            
+            ordemServico++;
+            
+            System.out.println("Digite o status do serviço: ");
+            String estado = entrada.next();
+
+            System.out.print("\r\n");
+            }
+        }
     }
 }
