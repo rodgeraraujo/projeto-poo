@@ -14,14 +14,14 @@ public class Servico {
     private String descricao;
     private float orcamento;
     private LocalDate dataEntrada;
-    private String ordemServico;
+    private int ordemServico;
     private String estado;
     private Peca[] pecas;
     private Equipamento[] equipamento;
     private Funcionario[] funcionario;
 
     public Servico(String defeito, String descricao, float orcamento,
-           LocalDate dataEntrada, String ordemServico, String estado,
+           LocalDate dataEntrada, int ordemServico, String estado,
            Peca[] pecas) {
         this.defeito = defeito;
         this.descricao = descricao;
@@ -72,11 +72,11 @@ public class Servico {
         this.dataEntrada = dataEntrada;
     }
 
-    public String getOrdemServico() {
+    public int getOrdemServico() {
         return ordemServico;
     }
 
-    public void setOrdemServico(String ordemServico) {
+    public void setOrdemServico(int ordemServico) {
         this.ordemServico = ordemServico;
     }
 

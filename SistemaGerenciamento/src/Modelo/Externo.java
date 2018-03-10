@@ -14,7 +14,7 @@ public class Externo extends Servico {
 
     public Externo(LocalDate horaInicio, LocalDate horaTermino, String defeito,
            String descricao, float orcamento, LocalDate dataEntrada,
-           String ordemServico, String estado, Peca[] pecas) {
+           int ordemServico, String estado, Peca[] pecas) {
         super(defeito, descricao, orcamento, dataEntrada, ordemServico, estado,
               pecas);
         this.horaInicio = horaInicio;

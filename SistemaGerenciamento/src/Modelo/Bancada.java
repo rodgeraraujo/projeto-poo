@@ -12,7 +12,7 @@ public class Bancada extends Servico{
     private Fabrica[] fabrica;
 
     public Bancada(String tipo, String defeito, String descricao,
-           float orcamento, LocalDate dataEntrada, String ordemServico,
+           float orcamento, LocalDate dataEntrada, int ordemServico,
            String estado, Peca[] pecas) {
         super(defeito, descricao, orcamento, dataEntrada, ordemServico, estado,
               pecas);
