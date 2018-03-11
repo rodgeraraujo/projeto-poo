@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import Modelo.ServicoDao;
 
 public class Main {
     public static void main(String[] args) {
@@ -107,8 +108,21 @@ public class Main {
             
             System.out.println("Digite o status do serviço: ");
             String estado = entrada.next();
-
-            System.out.print("\r\n");
+            
+            //Inserir cod de adicionar serviço aqui.
+            
+            }else if(choice == 2){
+                System.out.println("Digite o número da OS: ");
+                int id = entrada.nextInt();
+                //inserir cod de buscar aqui.
+                
+            }else if(choice == 3){
+                System.out.println("Digite o número da OS: ");
+                int id = entrada.nextInt();
+                //inserir cod de remover aqui.
+                
+            }else if(choice != 0){
+                System.out.println("Valor inválido!");
             }
         }
     }
