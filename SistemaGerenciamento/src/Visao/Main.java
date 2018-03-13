@@ -7,6 +7,7 @@ package Visao;
 
 //import Modelo.ServicoDao;
 import Modelo.Servico;
+import Modelo.ServicoDao;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
         
-        List<Servico> servicos = new ArrayList();
+        ServicoDao  servicos = new ServicoDao();
         
         int ordemServico = 0;
         
@@ -46,7 +47,7 @@ public class Main {
             if(choice == 1){
                 System.out.println("Digite o defeito do equipamento: ");
                 String defeito = entrada.next();
-
+                
                 System.out.println("Digite a descriçaõ do serviço: ");
                 String descricao =  entrada.next();
 
@@ -60,11 +61,15 @@ public class Main {
                 System.out.println("Digite o status do serviço: ");
                 String estado = entrada.next();
 
+                servicos.salvar(new Servico(defeito, descricao, orcamento, 
+                        dataEntrada, ordemServico, estado));
                 //Inserir cod de adicionar serviço aqui.
 
             }else if(choice == 2){
                 System.out.println("Digite o número da OS: ");
                 int id = entrada.nextInt();
+                
+                System.out.println(servicos.buscar(id));
                 //inserir cod de buscar aqui.
 
             }else if(choice == 3){

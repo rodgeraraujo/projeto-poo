@@ -2,6 +2,7 @@ package Modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -13,6 +14,31 @@ public class ServicoDao implements Dao<Servico>{
     
     public ServicoDao(){
         servicos = new ArrayList<>();
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 17 * hash + Objects.hashCode(this.servicos);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ServicoDao other = (ServicoDao) obj;
+        if (!Objects.equals(this.servicos, other.servicos)) {
+            return false;
+        }
+        return true;
     }
     
     @Override
@@ -34,5 +60,6 @@ public class ServicoDao implements Dao<Servico>{
     }
     return null;
     }
+    
     
 }

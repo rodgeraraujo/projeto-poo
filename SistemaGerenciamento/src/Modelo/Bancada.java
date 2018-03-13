@@ -14,8 +14,7 @@ public class Bancada extends Servico{
     public Bancada(String tipo, String defeito, String descricao,
            float orcamento, LocalDate dataEntrada, int ordemServico,
            String estado, Peca[] pecas) {
-        super(defeito, descricao, orcamento, dataEntrada, ordemServico, estado,
-              pecas);
+        super(defeito, descricao, orcamento, dataEntrada, ordemServico, estado);
         this.tipo = tipo;
     }
 
