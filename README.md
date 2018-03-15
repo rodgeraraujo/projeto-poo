@@ -10,3 +10,8 @@
 
 # PRIMEIRA ETAPA
 * Modelar classes
+
+# SEGUNDA ETAPA
+* Autenticação por login e senha
+* Menu textual (opções criar, buscar e salvar)
+* Javadoc

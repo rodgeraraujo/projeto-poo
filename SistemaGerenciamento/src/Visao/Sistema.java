@@ -79,28 +79,37 @@ public class Sistema {
             "Senha:", password
         };
         
-        ImageIcon icone = new ImageIcon("icon\\login.png");
+        ImageIcon userIcon = new ImageIcon("icon\\users.png");
         
         int option = JOptionPane.showConfirmDialog(null,
                                                    message, 
-                                                   "Login", 
-                                                   JOptionPane.OK_CANCEL_OPTION);
+                                                   "Login Admin Confirmation",
+                                                   JOptionPane.OK_CANCEL_OPTION, 
+                                                   JOptionPane.PLAIN_MESSAGE, 
+                                                   userIcon);
+        
         if (option == JOptionPane.OK_OPTION) {
             if (username.getText().equals(userCode) && 
                 password.getText().equals(passCode)) {
+               
+               ImageIcon successIcon = new ImageIcon("icon\\success.png");
                JOptionPane.showMessageDialog(null,
                                             "Login bem-sucedido!",
                                             "Successful", 
-                                            JOptionPane.INFORMATION_MESSAGE);
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            successIcon);
                
                //Função para construir menu textual
                menuConstrutor(userName);
             } else {
+                
                 System.out.println("Falha na autenticação.");
+                ImageIcon errorIcon = new ImageIcon("icon\\error.png");
                 JOptionPane.showMessageDialog(null,
                                               "Falha na autenticação.",
                                               "Failure",
-                                              JOptionPane.ERROR_MESSAGE);
+                                              JOptionPane.ERROR_MESSAGE,
+                                              errorIcon);
             }
         } else {
             System.out.println("Login cancelado.");
