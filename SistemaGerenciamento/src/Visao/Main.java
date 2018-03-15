@@ -10,7 +10,7 @@ public class Main {
         
         String userCode = "root"; //nome de usuário
         String passCode = "123"; //senha do usuário
-        String userName = "NomeUsuário"; //nome do usuário a ser exibido                        
+        String userName = "fn-2198"; //nome do usuário a ser exibido                        
         
         Sistema.AbriSistema(userCode, passCode, userName);
        

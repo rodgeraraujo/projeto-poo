@@ -147,10 +147,14 @@ public class Servico {
 
     @Override
     public String toString() {
-        return "Servico{" + "defeito=" + defeito + ", descricao=" + descricao +
-               ", orcamento=" + orcamento + ", dataEntrada=" + dataEntrada +
-               ", ordemServico=" + ordemServico + ", estado=" + estado +
-               ", pecas=" + Arrays.toString(pecas) + '}';
+        return "\nSERVIÇO\n"
+                + "Defeito: " + defeito + "\n" 
+                + "Descrição: " + descricao + "\n"
+                + "Orçamento: R$" + orcamento + "\n"
+                + "Data Entrada: " + dataEntrada + "\n"
+                + "Ordem do Serviço: " + ordemServico + "\n"
+                + "Estado: " + estado + "\n"
+                + "Pecas: " + Arrays.toString(pecas) + "\n\n";
     }
     
 }

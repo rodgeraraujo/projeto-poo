@@ -5,71 +5,13 @@
 
 package Visao;
 
-import Modelo.Servico;
-import Modelo.ServicoDao;
-import java.time.LocalDate;
-import java.util.Scanner;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Sistema {
-    //Menu textual construtor
-    private static void menuConstrutor(String userName) {
-
-        Scanner entrada = new Scanner(System.in);
         
-        ServicoDao  servicos = new ServicoDao();
-        
-        int ordemServico = 0;
-        
-        int choice = 1;
-        
-        while(choice !=0){
-        
-            menu(userName);
-
-            choice = entrada.nextInt();
-            if(choice == 1){
-                System.out.println("Digite o defeito do equipamento: ");
-                String defeito = entrada.next();
-                
-                System.out.println("Digite a descriçaõ do serviço: ");
-                String descricao =  entrada.next();
-
-                System.out.println("Digite o valor do orçamento: ");
-                float orcamento = entrada.nextFloat();
-
-                LocalDate dataEntrada = LocalDate.now();
-
-                ordemServico++;
-
-                System.out.println("Digite o status do serviço: ");
-                String estado = entrada.next();
-
-                servicos.salvar(new Servico(defeito, descricao, orcamento, 
-                        dataEntrada, ordemServico, estado));
-                //Inserir cod de adicionar serviço aqui.
-
-            }else if(choice == 2){
-                System.out.println("Digite o número da OS: ");
-                int id = entrada.nextInt();
-                
-                System.out.println(servicos.buscar(id));
-                //inserir cod de buscar aqui.
-
-            }else if(choice == 3){
-                System.out.println("Digite o número da OS: ");
-                int id = entrada.nextInt();
-                //inserir cod de remover aqui.
-
-            }else if(choice != 0){
-                System.out.println("Valor inválido!");
-            }
-        }
-    }
-    
     //Login autenticação
     static void AbriSistema(String userCode, String passCode, String userName) {
         JTextField username = new JTextField();
@@ -100,7 +42,7 @@ public class Sistema {
                                             successIcon);
                
                //Função para construir menu textual
-               menuConstrutor(userName);
+               Dados.menuConstrutor(userName);
             } else {
                 
                 System.out.println("Falha na autenticação.");
@@ -117,7 +59,7 @@ public class Sistema {
     }
     
     //Imprimir menu de opções
-    private static void menu(String userName) {
+    static void menu(String userName) {
         System.out.println("   Seja bem-vindo \'" + userName + "\'");
         System.out.print(
                 "┌───────────────────────────────┐"
