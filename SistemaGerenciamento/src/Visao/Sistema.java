@@ -5,6 +5,7 @@
 
 package Visao;
 
+import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -13,7 +14,7 @@ import javax.swing.JTextField;
 public class Sistema {
         
     //Login autenticação
-    static void AbriSistema(String userCode, String passCode, String userName) {
+    static void AbriSistema(String userCode, String passCode, String userName) throws IOException {
         JTextField username = new JTextField();
         JTextField password = new JPasswordField();
         Object[] message = {

@@ -55,7 +55,7 @@ public class Dados {
             }else if(choice == 3){
                 System.out.println("Digite o número da OS: ");
                 int id = entrada.nextInt();
-                //inserir cod de remover aqui.
+                servicos.remover(servicos.buscar(id));
 
             }else if(choice != 0){
                 System.out.println("Valor inválido!");

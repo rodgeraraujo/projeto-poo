@@ -46,9 +46,22 @@ public class ServicoDao implements Dao<Servico>{
         return servicos.add(obj);
     }
 
+    
+    
+
+//    @Override
+//    public boolean remover(Servico obj) {
+//    for(Servico e : servicos){
+//        if(e.getOrdemServico()== obj.getOrdemServico()){
+//            return servicos.remove(obj);
+//            }
+//        }
+//        return false;
+//    }
+    
     @Override
-    public boolean remover(Servico obj) {
-        return servicos.remove(obj);
+    public boolean remover(Servico id) {
+        return servicos.remove(id);
     }
 
     @Override

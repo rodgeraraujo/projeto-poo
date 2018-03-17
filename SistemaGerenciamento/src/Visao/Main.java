@@ -5,8 +5,10 @@
 
 package Visao;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         String userCode = "root"; //nome de usuário
         String passCode = "123"; //senha do usuário
