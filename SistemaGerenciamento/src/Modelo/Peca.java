@@ -10,13 +10,13 @@ public class Peca {
     private String nome;
     private int quantidade;
     private float valor;
-    private int ID;
+    private int id;
 
-    public Peca(String nome, int quantidade, float valor, int ID) {
+    public Peca(String nome, int quantidade, float valor, int id) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.valor = valor;
-        this.ID = ID;
+        this.id = id;
     }
 
     public String getNome() {
@@ -43,18 +43,18 @@ public class Peca {
         this.valor = valor;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
         return "Pe\u00e7a{" + "nome=" + nome + ", quantidade=" + quantidade +
-                ", valor=" + valor + ", ID=" + ID + '}';
+                ", valor=" + valor + ", id=" + id + '}';
     }
     
 }

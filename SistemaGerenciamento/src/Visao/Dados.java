@@ -5,19 +5,31 @@
 
 package Visao;
 
+import Modelo.Peca;
+import Modelo.PecaDao;
 import Modelo.Servico;
 import Modelo.ServicoDao;
 import java.io.Console;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Dados {
     static void menuConstrutor(String userName) throws IOException {
+        
+        PecaDao pecas = new PecaDao();
 
         Scanner entrada = new Scanner(System.in);
         
         ServicoDao  servicos = new ServicoDao();
+       
+        pecas.salvar(new Peca("Capacitor", 30, 10.50f, 1));
+        pecas.salvar(new Peca("Resistor", 50, 0.50f, 2));
+        pecas.salvar(new Peca("Fusivel", 30, 10.50f, 3));
+        pecas.salvar(new Peca("HD", 30, 430.90f, 4));
+        pecas.salvar(new Peca("Fonte", 30, 99.50f, 5));
         
         int ordemServico = 0;
         int choice = 1;     
@@ -35,7 +47,28 @@ public class Dados {
 
                 System.out.println("Digite o valor do orçamento: ");
                 float orcamento = entrada.nextFloat();
+                
+                
+                
+                
+                System.out.println("Foi utilizado alguma peça? \n"
+                        + "Digite \n"
+                        + "1 - Sim \n"
+                        + "0 - Não");
 
+                int id = entrada.nextInt();
+                
+                while(id == 1){
+                System.out.println("Digite o Cod das peças:\n"
+                        + "1 - Capacitor\n"
+                        + "2 - Resistor\n"
+                        + "3 - Fusivel\n"
+                        + "4 - HD\n"
+                        + "5 - Fonte\n");
+
+                }
+                
+                
                 LocalDate dataEntrada = LocalDate.now();
                 ordemServico++;
                 System.out.println("Digite o status do serviço: ");

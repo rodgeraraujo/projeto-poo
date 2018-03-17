@@ -8,18 +8,18 @@ import java.util.Objects;
  *
  * @author Lucas
  */
-public class ServicoDao implements Dao<Servico>{
+public class PecaDao implements Dao<Peca>{
     
-    private List<Servico> servicos;
+    private List<Peca> pecas;
     
-    public ServicoDao(){
-        servicos = new ArrayList<>();
+    public PecaDao(){
+        pecas = new ArrayList<>();
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.servicos);
+        hash = 17 * hash + Objects.hashCode(this.pecas);
         return hash;
     }
 
@@ -34,28 +34,27 @@ public class ServicoDao implements Dao<Servico>{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ServicoDao other = (ServicoDao) obj;
-        if (!Objects.equals(this.servicos, other.servicos)) {
+        final PecaDao other = (PecaDao) obj;
+        if (!Objects.equals(this.pecas, other.pecas)) {
             return false;
         }
         return true;
     }
     
     @Override
-    public boolean salvar(Servico obj) {
-        return servicos.add(obj);
+    public boolean salvar(Peca obj) {
+        return pecas.add(obj);
     }
-
     
     @Override
-    public boolean remover(Servico id) {
-        return servicos.remove(id);
+    public boolean remover(Peca id) {
+        return pecas.remove(id);
     }
 
     @Override
-    public Servico buscar(int id) {
-    for(Servico e : servicos){
-        if(e.getOrdemServico()== id){
+    public Peca buscar(int id) {
+    for(Peca e : pecas){
+        if(e.getId()== id){
             return e;
         }
     }

@@ -79,7 +79,7 @@ public class Servico {
     private Funcionario[] funcionario;
 
     public Servico(String defeito, String descricao, float orcamento,
-           LocalDate dataEntrada, int ordemServico, String estado) {
+           LocalDate dataEntrada, int ordemServico, String estado, Peca pecas[]) {
         this.defeito = defeito;
         this.descricao = descricao;
         this.orcamento = orcamento;
