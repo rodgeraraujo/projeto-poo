@@ -5,8 +5,12 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @date 18/03/2018
  */
 public class PecaDao implements Dao<Peca>{
     
@@ -15,7 +19,46 @@ public class PecaDao implements Dao<Peca>{
     public PecaDao(){
         pecas = new ArrayList<>();
     }
+    
+    /**
+     * Esse metodo salva as informações sobre a peça
+     * 
+     * @param obj
+     * @return armazena as informações da peça
+     */
+    @Override
+    public boolean salvar(Peca obj) {
+        return pecas.add(obj);
+    }
+    
+    /**
+     * Esse metodo remove as informações sobre da peça
+     * 
+     * @param id
+     * @return remove a peça
+     */
+    @Override
+    public boolean remover(Peca id) {
+        return pecas.remove(id);
+    }
 
+    /**
+     * Esse metodo busca as informações sobre a peça
+     * 
+     * @param id
+     * @return retorna as informações da peça, e retorna <i>null</i> caso o 
+     * valor não esteja armazenado
+     */
+    @Override
+    public Peca buscar(int id) {
+    for(Peca e : pecas){
+        if(e.getId()== id){
+            return e;
+        }
+    }
+    return null;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -40,26 +83,4 @@ public class PecaDao implements Dao<Peca>{
         }
         return true;
     }
-    
-    @Override
-    public boolean salvar(Peca obj) {
-        return pecas.add(obj);
-    }
-    
-    @Override
-    public boolean remover(Peca id) {
-        return pecas.remove(id);
-    }
-
-    @Override
-    public Peca buscar(int id) {
-    for(Peca e : pecas){
-        if(e.getId()== id){
-            return e;
-        }
-    }
-    return null;
-    }
-    
-    
 }

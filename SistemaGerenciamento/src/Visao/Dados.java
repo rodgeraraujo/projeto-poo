@@ -1,22 +1,30 @@
-/**
- *
- * @author RODGER
- */
-
 package Visao;
 
 import Modelo.Peca;
 import Modelo.PecaDao;
 import Modelo.Servico;
 import Modelo.ServicoDao;
-import java.io.Console;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
+/**
+ *
+ * @since 1.0
+ * @version 1.0
+ * @author Rogério Araújo <rogerio.araujo@mail.com>
+ * @author Lucas Garrido <llucasgf07@gmail.com>
+ * @date 18/03/2018
+ */
 public class Dados {
+    
+    /**
+     * Metodo com as funções do menu textual (salvar, remover, buscar, fechar
+     * sitema)
+     * 
+     * @param userName nome do usuário administrador do sistema
+     * @throws IOException 
+     */
     static void menuConstrutor(String userName) throws IOException {
         
         PecaDao pecas = new PecaDao();
@@ -42,14 +50,11 @@ public class Dados {
                 System.out.println("Digite o defeito do equipamento: ");
                 String defeito = entrada.next();
                 
-                System.out.println("Digite a descriçaõ do serviço: ");
+                System.out.println("Digite a descrição do serviço: ");
                 String descricao =  entrada.next();
 
                 System.out.println("Digite o valor do orçamento: ");
                 float orcamento = entrada.nextFloat();
-                
-                
-                
                 
                 System.out.println("Foi utilizado alguma peça? \n"
                         + "Digite \n"
@@ -65,9 +70,7 @@ public class Dados {
                         + "3 - Fusivel\n"
                         + "4 - HD\n"
                         + "5 - Fonte\n");
-
                 }
-                
                 
                 LocalDate dataEntrada = LocalDate.now();
                 ordemServico++;
@@ -75,7 +78,7 @@ public class Dados {
                 String estado = entrada.next();
 
                 servicos.salvar(new Servico(defeito, descricao, orcamento, 
-                        dataEntrada, ordemServico, estado));
+                        dataEntrada, ordemServico, estado, null));
                 //Inserir cod de adicionar serviço aqui.
                 
             }else if(choice == 2){

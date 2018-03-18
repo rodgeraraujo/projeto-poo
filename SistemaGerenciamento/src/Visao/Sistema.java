@@ -1,8 +1,3 @@
-/**
- *
- * @author RODGER
- */
-
 package Visao;
 
 import java.io.IOException;
@@ -11,9 +6,24 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+/**
+ * Classe que implementa um metodo para abri o sistema por meio de Login e Senha
+ * 
+ * @since 1.0
+ * @version 1.0
+ * @author Rogério Araújo <rogerio.araujo@mail.com>
+ * @author Lucas Garrido <llucasgf07@gmail.com>
+ * @date 18/03/2018
+ */
 public class Sistema {
         
-    //Login autenticação
+    /**
+     * 
+     * @param userCode login so usuário
+     * @param passCode senha do usuário
+     * @param userName nome do usuário administrador do sistema
+     * @throws IOException 
+     */
     static void AbriSistema(String userCode, String passCode, String userName) throws IOException {
         JTextField username = new JTextField();
         JTextField password = new JPasswordField();
@@ -59,7 +69,11 @@ public class Sistema {
         }
     }
     
-    //Imprimir menu de opções
+    /**
+     * Metodo para imprimir na tela o menu textual da aplicação
+     * 
+     * @param userName nome do usuário administrador do sitema
+     */
     static void menu(String userName) {
         System.out.println("   Seja bem-vindo \'" + userName + "\'");
         System.out.print(
