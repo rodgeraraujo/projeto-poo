@@ -13,8 +13,8 @@ public class Seguradora {
 
    /**
     * 
-    * @param nome nome da seguradora
-    * @param numChamado numero do chamado
+    * @param nome nome da seguradora resposável pela garantia extendida
+    * @param numChamado código identificador gerado pelas seguradoras
     */
     public Seguradora(String nome, String numChamado) {
         this.nome = nome;

@@ -31,12 +31,14 @@ public class Servico {
      * @param descricao descrição do serviço
      * @param orcamento orçamento do serviço
      * @param dataEntrada data de entrada do equipamento
-     * @param ordemServico númeor da ordem do serviço
-     * @param estado estado do serviço
+     * @param ordemServico código identificador do serviço
+     * @param estado status do serviço
      * @param pecas peças utilizadas no serviço
+
      */
     public Servico(String defeito, String descricao, float orcamento,
-           LocalDate dataEntrada, int ordemServico, String estado, Peca pecas[]) {
+           LocalDate dataEntrada, int ordemServico, String estado, Peca pecas[])
+    {
         this.defeito = defeito;
         this.descricao = descricao;
         this.orcamento = orcamento;

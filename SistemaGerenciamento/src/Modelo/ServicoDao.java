@@ -46,8 +46,8 @@ public class ServicoDao implements Dao<Servico>{
      * Esse metodo busca as informações sobre o serviço
      * 
      * @param id
-     * @return retorna as informações so serviço, e retorna <i>null</i> caso o valor
-     * não esteja armazenado
+     * @return retorna as informações so serviço, e retorna <i>null</i> caso o 
+     * valor não esteja armazenado
      */
     @Override
     public Servico buscar(int id) {

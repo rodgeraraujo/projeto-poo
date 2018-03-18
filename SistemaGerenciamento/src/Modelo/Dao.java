@@ -1,8 +1,9 @@
 package Modelo;
 
 /**
- * Classe que implementa um DAO (DATA ACESS OBJECT) por meio de uma <b>lista</b>. Essa
- * implementação permite a realização das operações CRUD(CREATE-READ-DELETE).
+ * Classe que implementa um DAO (DATA ACESS OBJECT) por meio de uma 
+ * <b>lista</b>. Essa implementação permite a realização das operações CRUD
+ * (CREATE-READ-DELETE).
  * 
  * @author Lucas Garrido <lucasgf07@gmail.com>
  * @author Rogério Araújo <rogerio.araujo@mail.com>
