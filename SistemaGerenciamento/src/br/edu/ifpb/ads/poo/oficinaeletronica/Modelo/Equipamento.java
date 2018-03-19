@@ -34,7 +34,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @return retorna o nuúmero de série
      */
     public String getNumSerie() {
@@ -42,7 +41,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @param numSerie 
      */
     public void setNumSerie(String numSerie) {
@@ -50,7 +48,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @return retorna o tipo
      */
     public String getTipo() {
@@ -58,7 +55,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @param tipo 
      */
     public void setTipo(String tipo) {
@@ -74,7 +70,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @param acessorios 
      */
     public void setAcessorios(String acessorios) {
@@ -82,7 +77,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @return retorna a marca
      */
     public String getMarca() {
@@ -90,7 +84,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @param marca 
      */
     public void setMarca(String marca) {
@@ -98,7 +91,6 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @return retorna o modelo
      */
     public String getModelo() {
@@ -106,13 +98,15 @@ public class Equipamento {
     }
 
     /**
-     * 
      * @param modelo 
      */
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
+    /**
+     * @return retorna a descrição do equipamento
+     */
     @Override
     public String toString() {
         return "Equipamento{" + "numSerie=" + numSerie + ", tipo=" + tipo +

@@ -12,7 +12,7 @@ import javax.swing.JTextField;
  * @since 1.0
  * @version 1.0
  * @author Rogério Araújo <rogerio.araujo@mail.com>
- * @author Lucas Garrido <llucasgf07@gmail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
  * @date 18/03/2018
  */
 public class Sistema {
@@ -24,7 +24,8 @@ public class Sistema {
      * @param userName nome do usuário administrador do sistema
      * @throws IOException 
      */
-    static void AbriSistema(String userCode, String passCode, String userName) throws IOException {
+    static void AbriSistema(String userCode, String passCode, String userName) 
+            throws IOException {
         JTextField username = new JTextField();
         JTextField password = new JPasswordField();
         Object[] message = {
@@ -84,10 +85,10 @@ public class Sistema {
                 + "└┬=============================┬┘\n"
                 + " │   Use as instruções baixo   │\n"
                 + " -------------------------------\n"
-                + " │ • Fechar System [0]         │\n"
+                + " │ • Fechar System     [0]     │\n"
                 + " │ • Cadastrar Serviço [1]     │\n"
                 + " │ • Consultar Serviço [2]     │\n"
-                + " │ • Inativar Serviço [3]      │\n"
+                + " │ • Inativar Serviço  [3]     │\n"
                 + " └─────────────────────────────┘\n");
         System.out.print("=>");
     }

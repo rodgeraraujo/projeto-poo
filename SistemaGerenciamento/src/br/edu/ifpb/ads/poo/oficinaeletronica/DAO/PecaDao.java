@@ -1,5 +1,6 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Peca;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

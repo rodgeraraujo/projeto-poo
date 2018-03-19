@@ -5,6 +5,7 @@ import java.io.IOException;
 /**
  * @version 1.0
  * @author Rogério Araújo <rogerio.araujo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
  * @date 18/03/2018
  */
 public class Main {

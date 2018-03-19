@@ -37,7 +37,6 @@ public class Externo extends Servico {
     }
 
     /**
-     * 
      * @return retorna a hora de inicio
      */
     public LocalDate getHoraInicio() {
@@ -45,7 +44,6 @@ public class Externo extends Servico {
     }
 
     /**
-     * 
      * @param horaInicio 
      */
     public void setHoraInicio(LocalDate horaInicio) {
@@ -53,7 +51,6 @@ public class Externo extends Servico {
     }
 
     /**
-     * 
      * @return retorna a hora do termino
      */
     public LocalDate getHoraTermino() {
@@ -61,13 +58,15 @@ public class Externo extends Servico {
     }
 
     /**
-     * 
      * @param horaTermino 
      */
     public void setHoraTermino(LocalDate horaTermino) {
         this.horaTermino = horaTermino;
     }
 
+    /**
+     * @return retorna a descrição do tipo serviço externo
+     */
     @Override
     public String toString() {
         return "Externo{" + "horaInicio=" + horaInicio + ", horaTermino=" +

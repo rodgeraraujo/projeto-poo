@@ -23,7 +23,6 @@ public class Fabrica {
     }
 
     /**
-     * 
      * @return retorna o nome
      */
     public String getNome() {
@@ -31,7 +30,6 @@ public class Fabrica {
     }
 
     /**
-     * 
      * @param nome 
      */
     public void setNome(String nome) {
@@ -39,7 +37,6 @@ public class Fabrica {
     }
 
     /**
-     * 
      * @return retorna o número da ordem de serviço
      */
     public int getOrdemServico() {
@@ -47,13 +44,15 @@ public class Fabrica {
     }
 
     /**
-     * 
      * @param ordemServico 
      */
     public void setOrdemServico(int ordemServico) {
         this.ordemServico = ordemServico;
     }
-
+    
+    /**
+     * @return retorna a descrição da fabrica
+     */
     @Override
     public String toString() {
         return "Fabrica{" + "nome=" + nome + ", ordemServico=" + ordemServico +

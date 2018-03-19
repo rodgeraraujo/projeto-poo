@@ -26,7 +26,6 @@ public class Endereco {
     }
 
     /**
-     * 
      * @return retorna rua
      */
     public String getRua() {
@@ -34,7 +33,6 @@ public class Endereco {
     }
 
     /**
-     * 
      * @param rua 
      */
     public void setRua(String rua) {
@@ -42,7 +40,6 @@ public class Endereco {
     }
 
     /**
-     * 
      * @return retorna bairro 
      */
     public String getBairro() {
@@ -50,7 +47,6 @@ public class Endereco {
     }
 
     /**
-     * 
      * @param bairro 
      */
     public void setBairro(String bairro) {
@@ -58,7 +54,6 @@ public class Endereco {
     }
 
     /**
-     * 
      * @return retorna numero
      */
     public int getNumero() {
@@ -66,13 +61,16 @@ public class Endereco {
     }
 
     /**
-     * 
      * @param numero 
      */
     public void setNumero(int numero) {
         this.numero = numero;
     }
 
+    
+    /**
+     * @return retorna a descrição do endereço do cliente
+     */
     @Override
     public String toString() {
         return "Endereco{" + "rua=" + rua + ", bairro=" + bairro + ", numero=" +

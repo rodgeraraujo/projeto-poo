@@ -1,12 +1,14 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.Visao;
 
-import Modelo.Peca;
-import Modelo.PecaDao;
-import Modelo.Servico;
-import Modelo.ServicoDao;
+
+import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.PecaDao;
+import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.ServicoDao;
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Peca;
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Servico;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -79,18 +81,36 @@ public class Dados {
 
                 servicos.salvar(new Servico(defeito, descricao, orcamento, 
                         dataEntrada, ordemServico, estado, null));
+                
+                JOptionPane.showMessageDialog(null,
+                                            "Ordem de Serviço " + ordemServico 
+                                            + "\nCadastro realizado com sucesso!",
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);
                 //Inserir cod de adicionar serviço aqui.
                 
             }else if(choice == 2){
                 System.out.println("Digite o número da OS: ");
                 int id = entrada.nextInt();
-                
+                JOptionPane.showMessageDialog(null,
+                                            servicos.buscar(id),
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);
                 System.out.println(servicos.buscar(id));
                 //inserir cod de buscar aqui.
 
             }else if(choice == 3){
                 System.out.println("Digite o número da OS: ");
                 int id = entrada.nextInt();
+                JOptionPane.showMessageDialog(null,
+                                            "Descrição do Serviço\n" 
+                                                + servicos.buscar(id)
+                                                + "\nRemovido com sucesso.",
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);
                 servicos.remover(servicos.buscar(id));
 
             }else if(choice != 0){
