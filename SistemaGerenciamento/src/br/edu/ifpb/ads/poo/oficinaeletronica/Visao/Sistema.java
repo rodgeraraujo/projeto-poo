@@ -33,7 +33,7 @@ public class Sistema {
         };
         
         ImageIcon userIcon = new ImageIcon("icon\\users.png");
-        
+
         int option = JOptionPane.showConfirmDialog(null,
                                                    message, 
                                                    "Login Admin Confirmation",
