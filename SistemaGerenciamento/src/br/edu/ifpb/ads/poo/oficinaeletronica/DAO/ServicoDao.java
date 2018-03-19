@@ -1,4 +1,4 @@
-package Modelo;
+package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
 import java.util.ArrayList;
 import java.util.List;

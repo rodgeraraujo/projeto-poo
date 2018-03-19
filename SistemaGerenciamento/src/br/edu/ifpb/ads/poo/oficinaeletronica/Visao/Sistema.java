@@ -1,4 +1,4 @@
-package Visao;
+package br.edu.ifpb.ads.poo.oficinaeletronica.Visao;
 
 import java.io.IOException;
 import javax.swing.ImageIcon;

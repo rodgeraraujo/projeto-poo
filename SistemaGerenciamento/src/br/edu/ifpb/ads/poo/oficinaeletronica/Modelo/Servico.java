@@ -1,4 +1,4 @@
-package Modelo;
+package br.edu.ifpb.ads.poo.oficinaeletronica.Modelo;
 
 /**
  *

@@ -1,4 +1,4 @@
-package Modelo;
+package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
 /**
  * Classe que implementa um DAO (DATA ACESS OBJECT) por meio de uma 
