@@ -1,8 +1,12 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.Visao;
 
 
+import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.ClienteDao;
+import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.FuncionarioDao;
 import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.PecaDao;
 import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.ServicoDao;
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Cliente;
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Funcionario;
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Peca;
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Servico;
 import java.io.IOException;
@@ -29,11 +33,15 @@ public class Dados {
      */
     static void menuConstrutor(String userName) throws IOException {
         
-        PecaDao pecas = new PecaDao();
-
         Scanner entrada = new Scanner(System.in);
         
+        PecaDao pecas = new PecaDao();
+        
         ServicoDao  servicos = new ServicoDao();
+        
+        FuncionarioDao funcionarios = new FuncionarioDao();
+        
+        ClienteDao clientes = new ClienteDao();
        
         pecas.salvar(new Peca("Capacitor", 30, 10.50f, 1));
         pecas.salvar(new Peca("Resistor", 50, 0.50f, 2));
@@ -42,6 +50,8 @@ public class Dados {
         pecas.salvar(new Peca("Fonte", 30, 99.50f, 5));
         
         int ordemServico = 0;
+        int codCliente = 1;
+        int codFuncionario = 1;
         int choice = 1;     
         while(choice !=0){
                 
@@ -83,7 +93,7 @@ public class Dados {
                         dataEntrada, ordemServico, estado, null));
                 
                 JOptionPane.showMessageDialog(null,
-                                            "Ordem de Serviço " + ordemServico 
+                                            "Ordem de Serviço: " + ordemServico 
                                             + "\nCadastro realizado com sucesso!",
                                             "Successful", 
                                             JOptionPane.INFORMATION_MESSAGE,
@@ -98,7 +108,6 @@ public class Dados {
                                             "Successful", 
                                             JOptionPane.INFORMATION_MESSAGE,
                                             null);
-                System.out.println(servicos.buscar(id));
                 //inserir cod de buscar aqui.
 
             }else if(choice == 3){
@@ -113,8 +122,90 @@ public class Dados {
                                             null);
                 servicos.remover(servicos.buscar(id));
 
-            }else if(choice != 0){
-                System.out.println("Valor inválido!");
+            }else if(choice == 4){
+                System.out.println("Digite o nome do funcionário");
+                String nome = entrada.next();
+                
+                System.out.println("Digite o cpf do funcionário, incluíndo os "
+                        + "pontos");
+                String cpf = entrada.next();
+                
+                System.out.println("Digite o número do telefone do "
+                        + "funcionário");
+                String telefone = entrada.next();
+                
+                System.out.println("Digite o valor do salário do funcionário");
+                float salario = entrada.nextFloat();
+                
+                funcionarios.salvar(new Funcionario(nome, telefone, salario, 
+                        LocalDate.now(),cpf, codFuncionario));
+                JOptionPane.showMessageDialog(null,
+                            "Código: " + codFuncionario
+                            +"\n   " + nome
+                            + "\nCadastro realizado com sucesso!",
+                            "Successful", 
+                            JOptionPane.INFORMATION_MESSAGE,
+                            null);
+                codFuncionario++;
+            }else if(choice == 5){
+                System.out.println("Digite o código do funcionario");
+                int id = entrada.nextInt();
+                funcionarios.buscar(id);
+                JOptionPane.showMessageDialog(null,
+                                            funcionarios.buscar(id),
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);
+                        
+            }else if(choice == 6){
+                System.out.println("Digite o código do funcionario");
+                int id = entrada.nextInt();
+                JOptionPane.showMessageDialog(null,
+                                            "Descrição do Funcionário\n" 
+                                                + funcionarios.buscar(id)
+                                                + "\nRemovido com sucesso.",
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);
+                funcionarios.remover(funcionarios.buscar(id));
+                
+            }else if(choice == 7){
+                System.out.println("Digite o nome do Cliente");
+                String nome = entrada.next();
+                
+                System.out.println("Digite o cpf do cliente incluíndo os "
+                        + "pontos");
+                String cpf = entrada.next();
+                
+                clientes.salvar(new Cliente(cpf, null, nome, null, codCliente));
+                JOptionPane.showMessageDialog(null,
+                            "Código: " + codCliente
+                            +"\n  " + nome
+                            + "\nCadastro realizado com sucesso!",
+                            "Successful", 
+                            JOptionPane.INFORMATION_MESSAGE,
+                            null);
+                codCliente++;
+                
+            }else if(choice == 8){
+                System.out.println("Digite o cod do cliente");
+                int id = entrada.nextInt();
+                JOptionPane.showMessageDialog(null,
+                                            clientes.buscar(id),
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);
+            }else if(choice == 9){
+                System.out.println("Digite o cod do cliente");
+                int id = entrada.nextInt();
+                JOptionPane.showMessageDialog(null,
+                                            "Descrição do Cliente\n" 
+                                                + clientes.buscar(id)
+                                                + "\nRemovido com sucesso.",
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);
+                clientes.remover(clientes.buscar(id));
             }
             
         }

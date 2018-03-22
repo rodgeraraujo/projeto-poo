@@ -76,20 +76,29 @@ public class Sistema {
      * @param userName nome do usuário administrador do sitema
      */
     static void menu(String userName) {
-        System.out.println("   Seja bem-vindo \'" + userName + "\'");
+        System.out.println("       Seja bem-vindo \'" + userName + "\'");
         System.out.print(
-                "┌───────────────────────────────┐"
-                + "\n│  Gerência Oficina Eletrônica  │\n"
-                + "│  ---------------------------  │\n"
-                + "│          Version 1.0          │\n"
-                + "└┬=============================┬┘\n"
-                + " │   Use as instruções baixo   │\n"
-                + " -------------------------------\n"
-                + " │ • Fechar System     [0]     │\n"
-                + " │ • Cadastrar Serviço [1]     │\n"
-                + " │ • Consultar Serviço [2]     │\n"
-                + " │ • Inativar Serviço  [3]     │\n"
-                + " └─────────────────────────────┘\n");
+                "        ┌──────────────────┐"
+                + " \n        │  Gerência Oficina Eletrônica  │\n"
+                + "        │  ---------------------------  │\n"
+                + "        │          Version 1.0          │\n"
+                + "        └┬============================┬┘\n"
+                + "          /   Use as instruções baixo   \\\n"
+                + "          -------------------------------\n"
+                + "         │ • Fechar System        [0]  │\n"
+                + "         │ • Cadastrar Serviço    [1]  │\n"
+                + "         │ • Consultar Serviço    [2]  │\n"
+                + "         │ • Inativar Serviço     [3]  │\n"
+                + "         │ ||||||||||||||||||||||||||  │\n"
+                + "         │ • Cadastrar Funcionario[4]  │\n"
+                + "         │ • Consultar Funcionario[5]  │\n"
+                + "         │ • Inativar Funcionario [6]  │\n"
+                + "         │ ||||||||||||||||||||||||||  │\n"
+                + "         │ • Cadastrar Cliente    [7]  │\n" 
+                + "         │ • Consultar Cliente    [8]  │\n" 
+                + "         │ • Inativar Cliente     [9]  │\n"
+                + "         └─────────────────┘\n");
+                //+ " └─────────────────────────────┘\n");
         System.out.print("=>");
     }
 }

@@ -12,9 +12,10 @@ import java.util.Arrays;
 public class Cliente {
     
     private String cpf;
-    private Endereco[] endereco;
+    private Endereco endereco;
     private String  nome;
-    private String telefone[];
+    private String telefone;
+    private int id;
     
     /**
      * 
@@ -23,12 +24,46 @@ public class Cliente {
      * @param nome nome do cliente
      * @param telefone número do(s) telefone(s) do cliente
      */
-    public Cliente(String cpf,Endereco[] endereco, String nome,
-           String[] telefone) {
+    public Cliente(String cpf,Endereco endereco, String nome,
+           String telefone, int id) {
         this.cpf = cpf;
         this.endereco = endereco;
         this.nome = nome;
         this.telefone = telefone;
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -48,14 +83,14 @@ public class Cliente {
     /**
      * @return retorna o endereço do cliente
      */
-    public Endereco[] getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
     /**
      * @param endereco 
      */
-    public void setEndereco(Endereco[] endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
@@ -76,14 +111,14 @@ public class Cliente {
     /**
      * @return retorna o(s) telefone(s) do cliente
      */
-    public String[] getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
     /**
      * @param telefone 
      */
-    public void setTelefone(String[] telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -94,9 +129,9 @@ public class Cliente {
     public String toString() {
         return "\nCLIENTE\n" 
                 + "CPF:" + cpf + "\n"
-                + "Endereço" + Arrays.toString(endereco) + "\n"
+                + "Endereço: " + endereco + "\n"
                 + "Nome: " + nome +  "\n"
-                + "Telefone(s): " + Arrays.toString(telefone);
+                + "Telefone(s): " + telefone;
     }
     
 }

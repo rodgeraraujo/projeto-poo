@@ -17,6 +17,7 @@ public class Funcionario {
     private float salario;
     private LocalDate dataAdmissao;
     private String CPF;
+    private int id;
 
     /**
      * 
@@ -27,12 +28,52 @@ public class Funcionario {
      * @param CPF número do CPF do funcionário
      */
     public Funcionario(String nome, String telefone, float salario,
-            LocalDate dataAdmissao, String CPF) {
+            LocalDate dataAdmissao, String CPF, int id) {
         this.nome = nome;
         this.telefone = telefone;
         this.salario = salario;
         this.dataAdmissao = dataAdmissao;
         this.CPF = CPF;
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Funcionario other = (Funcionario) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return retorna o ID 
+     */
+    public int getId() {
+        return id;
+    }
+
+    /** 
+     * @param id 
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
