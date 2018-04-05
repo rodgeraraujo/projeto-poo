@@ -109,9 +109,11 @@ public class Equipamento {
      */
     @Override
     public String toString() {
-        return "Equipamento{" + "numSerie=" + numSerie + ", tipo=" + tipo +
-                ", acessorios=" + acessorios + ", marca=" + marca + ", modelo="
-                + modelo + '}';
+        return "\nEQUIPAMENTO\n" 
+                + "Número de Série: " + numSerie + "\n"
+                + "Tipo: " + tipo + "\n"
+                + "Marca: " + marca +  "\n"
+                + "Modelo: " + modelo +"\n"
+                + "Acessório: " + acessorios;
     }
-    
 }

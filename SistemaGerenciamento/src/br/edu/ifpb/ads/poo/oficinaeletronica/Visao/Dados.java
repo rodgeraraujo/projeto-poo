@@ -2,10 +2,12 @@ package br.edu.ifpb.ads.poo.oficinaeletronica.Visao;
 
 
 import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.ClienteDao;
+import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.EquipamentoDao;
 import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.FuncionarioDao;
 import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.PecaDao;
 import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.ServicoDao;
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Cliente;
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Equipamento;
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Funcionario;
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Peca;
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Servico;
@@ -42,6 +44,8 @@ public class Dados {
         FuncionarioDao funcionarios = new FuncionarioDao();
         
         ClienteDao clientes = new ClienteDao();
+        
+        EquipamentoDao equipamentos = new EquipamentoDao();
        
         pecas.salvar(new Peca("Capacitor", 30, 10.50f, 1));
         pecas.salvar(new Peca("Resistor", 50, 0.50f, 2));
@@ -67,23 +71,6 @@ public class Dados {
 
                 System.out.println("Digite o valor do orçamento: ");
                 float orcamento = entrada.nextFloat();
-//                
-//                System.out.println("Foi utilizado alguma peça? \n"
-//                        + "Digite \n"
-//                        + "1 - Sim \n"
-//                        + "0 - Não");
-//
-//                int id = entrada.nextInt();
-//                
-//                while(id == 1){
-//                System.out.println("Digite o Cod das peças:\n"
-//                        + "1 - Capacitor\n"
-//                        + "2 - Resistor\n"
-//                        + "3 - Fusivel\n"
-//                        + "4 - HD\n"
-//                        + "5 - Fonte\n");
-//                }
-//                
                 LocalDate dataEntrada = LocalDate.now();
                 ordemServico++;
                 System.out.println("Digite o status do serviço: ");
@@ -206,8 +193,52 @@ public class Dados {
                                             JOptionPane.INFORMATION_MESSAGE,
                                             null);
                 clientes.remover(clientes.buscar(id));
+            }else if(choice == 10){
+                System.out.println("Digite o número de série do equipamento");
+                String numSerie = entrada.next();
+                
+                System.out.println("Digite o tipo do equipamento");
+                String tipo = entrada.next();
+                
+                System.out.println("Digite o acessório do equipamento");
+                String acess = entrada.next();
+                
+                System.out.println("Digite a marca do equipamento");
+                String marca = entrada.next();
+                
+                System.out.println("Digite o modelo do equipamento");
+                String modelo = entrada.next();
+                
+                equipamentos.salvar(new Equipamento(numSerie, tipo, acess,
+                        marca, modelo));
+                
+                JOptionPane.showMessageDialog(null,
+                            "\nCadastro realizado com sucesso!",
+                            "Successful", 
+                            JOptionPane.INFORMATION_MESSAGE,
+                            null);
+            }else if(choice == 11){
+                System.out.println("Digite o número de série do equipamento");
+                String numSerie = entrada.next();
+                JOptionPane.showMessageDialog(null,
+                                            equipamentos.buscarEquip(numSerie),
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);                
+                
+            }else if(choice == 12){
+                System.out.println("Digite o número de série do equipamento");
+                String numSerie = entrada.next();
+                JOptionPane.showMessageDialog(null,
+                                            equipamentos.buscarEquip(numSerie)
+                                            + "\nRemovido com sucesso.",
+                                            "Successful", 
+                                            JOptionPane.INFORMATION_MESSAGE,
+                                            null);                
+                equipamentos.remover(equipamentos.buscarEquip(numSerie));
+            }else{
+                System.out.println("Valor Invalido!!");
             }
-            
         }
     }
 }
