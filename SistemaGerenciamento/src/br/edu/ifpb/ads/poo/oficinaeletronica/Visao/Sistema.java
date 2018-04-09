@@ -97,10 +97,6 @@ public class Sistema {
                 + "         │ • Cadastrar Cliente    [7]  │\n" 
                 + "         │ • Consultar Cliente    [8]  │\n" 
                 + "         │ • Inativar Cliente     [9]  │\n"
-                + "         │ ||||||||||||||||||||||||||  │\n"                        
-                + "         │ • Cadastrar Equipamento[10] │\n"
-                + "         │ • Consultar Equipamento[11] │\n"
-                + "         │ • Inativar Equipamento [12] │\n"
                 + "         └─────────────────┘\n");
                 //+ " └─────────────────────────────┘\n");
         System.out.print("=>");
