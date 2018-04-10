@@ -9,7 +9,7 @@ package br.edu.ifpb.ads.poo.oficinaeletronica.Visao;
  *
  * @author Lucas
  */
-public class CadastroCliente extends javax.swing.JFrame {
+public class CadastroFuncionario extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroCliente
@@ -17,13 +17,13 @@ public class CadastroCliente extends javax.swing.JFrame {
     
     private Principal parent;
     
-    public CadastroCliente(Principal parent){
+    public CadastroFuncionario(Principal parent){
         this.parent = parent;
         
         initComponents();
     }
     
-    public CadastroCliente() {
+    public CadastroFuncionario() {
         initComponents();
     }
 
@@ -41,12 +41,10 @@ public class CadastroCliente extends javax.swing.JFrame {
         textoCpf = new javax.swing.JLabel();
         textoNome = new javax.swing.JLabel();
         textoTelefone = new javax.swing.JLabel();
-        textoEndereco = new javax.swing.JLabel();
         campoCpf = new javax.swing.JFormattedTextField();
         btBuscar = new javax.swing.JButton();
         campoNome = new javax.swing.JTextField();
         campoTelefone = new javax.swing.JFormattedTextField();
-        campoEndereco = new javax.swing.JTextField();
         btSalvar = new javax.swing.JButton();
         btExcluir = new javax.swing.JButton();
         btCancelar = new javax.swing.JButton();
@@ -61,8 +59,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         textoNome.setText("NOME");
 
         textoTelefone.setText("TELEFONE");
-
-        textoEndereco.setText("ENDEREÇO");
 
         try {
             campoCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -83,14 +79,6 @@ public class CadastroCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        campoEndereco.setToolTipText("");
-        campoEndereco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        campoEndereco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoEnderecoActionPerformed(evt);
-            }
-        });
-
         btSalvar.setText("Salvar");
 
         btExcluir.setText("Excluir");
@@ -109,11 +97,9 @@ public class CadastroCliente extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoEndereco)
                     .addComponent(textoInserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textoEndereco)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(textoCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -136,10 +122,10 @@ public class CadastroCliente extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btCancelar)
-                .addGap(16, 16, 16))
+                .addGap(21, 21, 21))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textoCpf, textoEndereco, textoNome, textoTelefone});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textoCpf, textoNome, textoTelefone});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,20 +145,16 @@ public class CadastroCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoTelefone)
                     .addComponent(campoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(textoEndereco)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvar)
                     .addComponent(btExcluir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btCancelar)
-                .addContainerGap())
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {textoCpf, textoEndereco, textoNome, textoTelefone});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {textoCpf, textoNome, textoTelefone});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,10 +169,6 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void campoEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoEnderecoActionPerformed
 
     private void campoCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCpfActionPerformed
         // TODO add your handling code here:
@@ -219,20 +197,21 @@ public class CadastroCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroCliente().setVisible(true);
+                new CadastroFuncionario().setVisible(true);
             }
         });
     }
@@ -243,12 +222,10 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btSalvar;
     private javax.swing.JFormattedTextField campoCpf;
-    private javax.swing.JTextField campoEndereco;
     private javax.swing.JTextField campoNome;
     private javax.swing.JFormattedTextField campoTelefone;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel textoCpf;
-    private javax.swing.JLabel textoEndereco;
     private javax.swing.JLabel textoInserir;
     private javax.swing.JLabel textoNome;
     private javax.swing.JLabel textoTelefone;

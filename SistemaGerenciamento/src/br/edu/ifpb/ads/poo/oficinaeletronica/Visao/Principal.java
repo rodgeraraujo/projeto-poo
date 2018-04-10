@@ -32,7 +32,8 @@ public class Principal extends javax.swing.JFrame {
         btFuncionario = new javax.swing.JButton();
         btServico = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,6 +41,7 @@ public class Principal extends javax.swing.JFrame {
 
         painel.setBackground(new java.awt.Color(0, 0, 102));
         painel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Sistema Gerenciamento de Oficina de Eletrônica", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 102, 255))); // NOI18N
+        painel.setPreferredSize(new java.awt.Dimension(700, 550));
 
         btCliente.setText("Clientes");
         btCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -49,73 +51,97 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btFuncionario.setText("Funcionários");
+        btFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFuncionarioActionPerformed(evt);
+            }
+        });
 
         btServico.setText("Serviços");
+        btServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btServicoActionPerformed(evt);
+            }
+        });
 
         btSair.setText("Sair");
+        btSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSairActionPerformed(evt);
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel3.setText("Bem vindo ao sistema!");
 
-        jLabel1.setText("Escolha uma opção!");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1))
-        );
+        jLabel1.setText("Qual cadastro deseja fazer?");
 
         javax.swing.GroupLayout painelLayout = new javax.swing.GroupLayout(painel);
         painel.setLayout(painelLayout);
         painelLayout.setHorizontalGroup(
             painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
                 .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(btFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(btServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(78, 78, 78))
+                    .addGroup(painelLayout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(jLabel2))
+                    .addGroup(painelLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel3))
+                    .addGroup(painelLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(painelLayout.createSequentialGroup()
+                                .addComponent(btServico, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                                .addComponent(btFuncionario)))))
+                .addGap(14, 14, 14))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btSair)
+                .addContainerGap())
         );
         painelLayout.setVerticalGroup(
             painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btCliente)
-                .addGap(18, 18, 18)
-                .addComponent(btFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btServico, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(85, 85, 85)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCliente)
+                    .addComponent(btServico, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86)
+                .addComponent(btSair)
                 .addContainerGap())
         );
 
-        painelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btCliente, btFuncionario, btSair, btServico});
+        painelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btCliente, btFuncionario, btServico});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(252, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,10 +149,29 @@ public class Principal extends javax.swing.JFrame {
 
     private void btClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteActionPerformed
         CadastroCliente cliente = new CadastroCliente(this);
-        
+
         cliente.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btClienteActionPerformed
+
+    private void btFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFuncionarioActionPerformed
+        CadastroFuncionario funcionario = new CadastroFuncionario(this);
+
+        funcionario.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btFuncionarioActionPerformed
+
+    private void btServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoActionPerformed
+        CadastroServico servico = new CadastroServico(this);
+
+        servico.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btServicoActionPerformed
+
+    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        //Fechar sistema
+        System.exit(0);
+    }//GEN-LAST:event_btSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,7 +214,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btSair;
     private javax.swing.JButton btServico;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel painel;
     // End of variables declaration//GEN-END:variables
 }
