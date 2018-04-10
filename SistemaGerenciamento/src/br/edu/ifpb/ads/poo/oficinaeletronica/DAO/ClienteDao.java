@@ -1,6 +1,13 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Cliente;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,14 +18,32 @@ import java.util.Objects;
  */
 public class ClienteDao implements Dao<Cliente> {
 
+    private File file;
+    
     private List<Cliente> clientes;
 
-    public ClienteDao(){
-         clientes = new ArrayList<>();
+    public ClienteDao() throws IOException{
+        
+        File file = new File("arquivos\\clientes.bin");
+        
+        if(!file.exists()){
+            file.createNewFile(); 
+        }
     }
     @Override
-    public boolean salvar(Cliente obj) {
-        return clientes.add(obj);
+    public boolean salvar(Cliente obj) throws IOException, ClassNotFoundException {
+        List<Cliente> clientes = listar();
+        
+        if(buscarCpf(obj.getCpf()) == null){
+            if(clientes.add(obj)){
+                atualizarArquivo(clientes);
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
     }
 
     @Override
@@ -27,9 +52,26 @@ public class ClienteDao implements Dao<Cliente> {
     }
 
     @Override
-    public Cliente buscar(int id) {
+    public Cliente buscar(int id) throws IOException, ClassNotFoundException {
+        
+        List<Cliente> clientes = listar();
+        
         for(Cliente e : clientes){
             if(e.getId() == id){
+                return e;
+            }
+        }
+        return null;
+    }
+    
+    
+    
+    
+    public Cliente buscarCpf(String cpf) throws IOException, ClassNotFoundException{
+        List<Cliente> clientes = listar();
+        
+        for(Cliente e : clientes){
+            if(e.getCpf() == cpf){
                 return e;
             }
         }
@@ -59,6 +101,25 @@ public class ClienteDao implements Dao<Cliente> {
             return false;
         }
         return true;
+    }
+
+    private void atualizarArquivo(List<Cliente> clientes) throws IOException {
+        try (ObjectOutputStream out = new ObjectOutputStream(
+                new FileOutputStream(file))) {
+            out.writeObject(clientes);
+        }    }
+
+    @Override
+    public List<Cliente> listar() throws IOException, ClassNotFoundException {
+                
+        if(file.length()>0){
+            ObjectInputStream in = new ObjectInputStream(
+            new FileInputStream(file));
+            
+            return (List<Cliente>) in.readObject();
+        }else{
+            return new ArrayList<>();
+        }
     }
     
 }
