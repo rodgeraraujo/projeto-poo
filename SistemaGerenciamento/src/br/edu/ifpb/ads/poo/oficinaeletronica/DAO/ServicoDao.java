@@ -1,6 +1,7 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Servico;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -83,5 +84,10 @@ public class ServicoDao implements Dao<Servico>{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public List<Servico> listar() throws IOException, ClassNotFoundException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

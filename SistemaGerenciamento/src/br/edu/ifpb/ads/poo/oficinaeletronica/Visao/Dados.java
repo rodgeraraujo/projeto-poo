@@ -31,7 +31,7 @@ public class Dados {
      * @param userName nome do usuário administrador do sistema
      * @throws IOException 
      */
-    static void menuConstrutor(String userName) throws IOException {
+    static void menuConstrutor(String userName) throws IOException, ClassNotFoundException {
         
         Scanner entrada = new Scanner(System.in);
         

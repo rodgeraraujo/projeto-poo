@@ -25,7 +25,7 @@ public class Sistema {
      * @throws IOException 
      */
     static void AbriSistema(String userCode, String passCode, String userName) 
-            throws IOException {
+            throws IOException, ClassNotFoundException {
         JTextField username = new JTextField();
         JTextField password = new JPasswordField();
         Object[] message = {

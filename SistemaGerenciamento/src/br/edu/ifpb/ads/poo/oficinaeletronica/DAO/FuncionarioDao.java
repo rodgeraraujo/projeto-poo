@@ -1,6 +1,7 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Funcionario;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -60,6 +61,11 @@ public class FuncionarioDao implements Dao<Funcionario> {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public List<Funcionario> listar() throws IOException, ClassNotFoundException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

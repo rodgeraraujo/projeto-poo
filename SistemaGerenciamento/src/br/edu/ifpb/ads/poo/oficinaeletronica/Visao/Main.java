@@ -16,7 +16,7 @@ public class Main {
      * @param args Iniciador normal
      * @throws IOException 
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         
         String userCode = "root"; //nome de usuário
         String passCode = "123"; //senha do usuário
