@@ -160,6 +160,7 @@ public class Dados {
                         + "pontos");
                 String cpf = entrada.next();
                 
+                //Aqui pediu pra criar um construtor em Cliente
                 clientes.salvar(new Cliente(cpf, null, nome, null, codCliente));
                 JOptionPane.showMessageDialog(null,
                             "Código: " + codCliente

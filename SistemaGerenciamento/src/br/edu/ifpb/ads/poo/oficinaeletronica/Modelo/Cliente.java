@@ -1,5 +1,6 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.Modelo;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Arrays;
  * @author Rogério Araújo <rogerio.aruajo@mail.com>
  * @date 18/03/2018
  */
-public class Cliente {
+public class Cliente implements Serializable{
     
     private String cpf;
     private String endereco;
@@ -34,6 +35,12 @@ public class Cliente {
 
     public Cliente() {
 
+    }
+
+    
+    //Construtor gerado pelo erro, em DADOS
+    public Cliente(String cpf, Object object, String nome, Object object0, int codCliente) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

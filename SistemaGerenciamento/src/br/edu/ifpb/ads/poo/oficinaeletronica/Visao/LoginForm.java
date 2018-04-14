@@ -257,8 +257,8 @@ public class LoginForm extends javax.swing.JFrame {
         String username = jTextField1.getText();
         String senha = jPasswordField1.getText();
         
-        if ((username.contains("root")) && (senha.contains("123"))) {
-            JOptionPane.showMessageDialog(null, "Login bem sucedido!");
+        if ("root".equals(username) && "123".equals(senha)) {
+            //JOptionPane.showMessageDialog(null, "Login bem sucedido!");
             
             Principal mainPrincipal = new Principal(this);
             this.setVisible(false);
