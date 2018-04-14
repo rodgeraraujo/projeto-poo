@@ -1,7 +1,12 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Servico;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,10 +21,18 @@ import java.util.Objects;
  */
 public class ServicoDao implements Dao<Servico>{
     
+    private File file;
+    
     private List<Servico> servicos;
     
-    public ServicoDao(){
-        servicos = new ArrayList<>();
+    public ServicoDao() throws IOException, ClassNotFoundException{
+
+        
+        File file = new File("arquivos\\servicos");
+        
+        if(!file.exists()){
+            file.createNewFile();
+        }
     }
     
     /**
@@ -29,8 +42,20 @@ public class ServicoDao implements Dao<Servico>{
      * @return armazena as informações do serviço
      */
     @Override
-    public boolean salvar(Servico obj) {
-        return servicos.add(obj);
+    public boolean salvar(Servico obj) throws IOException, ClassNotFoundException {
+        List<Servico> servicos = listar();
+        
+        if(buscar(obj.getOrdemServico()) == null){
+            if(servicos.add(obj)){
+                atualizaArquivo(servicos);
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+        
     }
 
     /**
@@ -40,8 +65,15 @@ public class ServicoDao implements Dao<Servico>{
      * @return remove o serviço
      */
     @Override
-    public boolean remover(Servico id) {
-        return servicos.remove(id);
+    public boolean remover(Servico id) throws IOException, ClassNotFoundException {
+        List<Servico> servicos = listar();
+        
+        if(servicos.remove(id)){
+            atualizaArquivo(servicos);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -52,13 +84,15 @@ public class ServicoDao implements Dao<Servico>{
      * valor não esteja armazenado
      */
     @Override
-    public Servico buscar(int id) {
-    for(Servico e : servicos){
-        if(e.getOrdemServico()== id){
-            return e;
+    public Servico buscar(int id) throws IOException, ClassNotFoundException {
+        List<Servico> servicos = listar();
+        for(Servico e : servicos){
+            if(e.getOrdemServico() == id){
+                return e;
+            }
         }
-    }
-    return null;
+        return null;
+        
     }
     
     @Override
@@ -88,6 +122,22 @@ public class ServicoDao implements Dao<Servico>{
 
     @Override
     public List<Servico> listar() throws IOException, ClassNotFoundException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        if(file.length() > 0){
+            ObjectInputStream in = new ObjectInputStream(
+                    new FileInputStream(file));
+            
+            return (List<Servico>) in.readObject();
+        }else{
+            return null;
+        }
+    }
+
+    private void atualizaArquivo(List<Servico> servicos) throws IOException {
+        try(ObjectOutputStream out = new ObjectOutputStream(
+                new FileOutputStream(file))){
+            out.writeObject(servicos);
+            
+        }
     }
 }

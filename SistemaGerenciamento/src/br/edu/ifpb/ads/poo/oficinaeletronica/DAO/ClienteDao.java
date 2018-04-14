@@ -1,6 +1,7 @@
 package br.edu.ifpb.ads.poo.oficinaeletronica.DAO;
 
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Cliente;
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Servico;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -47,8 +48,15 @@ public class ClienteDao implements Dao<Cliente> {
     }
 
     @Override
-    public boolean remover(Cliente obj) {
-        return clientes.remove(obj);
+    public boolean remover(Cliente obj) throws IOException, ClassNotFoundException {
+        List<Cliente> clientes = listar();
+        
+        if(clientes.remove(obj)){
+            atualizarArquivo(clientes);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
@@ -107,7 +115,8 @@ public class ClienteDao implements Dao<Cliente> {
         try (ObjectOutputStream out = new ObjectOutputStream(
                 new FileOutputStream(file))) {
             out.writeObject(clientes);
-        }    }
+        }    
+    }
 
     @Override
     public List<Cliente> listar() throws IOException, ClassNotFoundException {
