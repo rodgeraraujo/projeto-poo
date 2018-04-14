@@ -25,12 +25,15 @@ public class Cliente {
      * @param telefone número do(s) telefone(s) do cliente
      */
     public Cliente(String cpf,String endereco, String nome,
-           String telefone, int id) {
+           String telefone) {
         this.cpf = cpf;
         this.endereco = endereco;
         this.nome = nome;
         this.telefone = telefone;
-        this.id = id;
+    }
+
+    public Cliente() {
+
     }
 
     @Override
