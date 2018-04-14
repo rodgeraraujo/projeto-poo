@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class Cliente {
     
     private String cpf;
-    private Endereco endereco;
+    private String endereco;
     private String  nome;
     private String telefone;
     private int id;
@@ -24,7 +24,7 @@ public class Cliente {
      * @param nome nome do cliente
      * @param telefone número do(s) telefone(s) do cliente
      */
-    public Cliente(String cpf,Endereco endereco, String nome,
+    public Cliente(String cpf,String endereco, String nome,
            String telefone, int id) {
         this.cpf = cpf;
         this.endereco = endereco;
@@ -83,14 +83,14 @@ public class Cliente {
     /**
      * @return retorna o endereço do cliente
      */
-    public Endereco getEndereco() {
+    public String getEndereco() {
         return endereco;
     }
 
     /**
      * @param endereco 
      */
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 

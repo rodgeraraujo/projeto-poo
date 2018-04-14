@@ -15,6 +15,8 @@ package br.edu.ifpb.ads.poo.oficinaeletronica.Visao;
  * @date 13/04/2018
  */
 
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Funcionario;
+import java.time.LocalDate;
 import javax.swing.JFrame;
 
 public class CadastroFuncionario extends javax.swing.JFrame {
@@ -23,6 +25,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
      * Creates new form RegisterForm
      */
 
+    private CadastroFuncionario dao;
     private Principal parent;
     
     public CadastroFuncionario(Principal parent){
@@ -169,7 +172,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(228, 241, 254));
 
-        jButtonRegister1.setBackground(new java.awt.Color(34, 167, 240));
+        jButtonRegister1.setBackground(new java.awt.Color(248, 148, 6));
         jButtonRegister1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonRegister1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRegister1.setText("Buscar");
@@ -235,7 +238,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabelRegister)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,11 +252,12 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCloseMouseClicked
@@ -275,6 +279,13 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelRegisterMouseClicked
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
+        String cpf = jTextField2.getText();
+        String nome = jTextField3.getText();
+        String telefone = jTextField1.getText();
+        
+        Funcionario funcionarios = new Funcionario(nome, telefone, 950, LocalDate.now(), cpf, 1);
+        
+        System.out.println(funcionarios);
         
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
