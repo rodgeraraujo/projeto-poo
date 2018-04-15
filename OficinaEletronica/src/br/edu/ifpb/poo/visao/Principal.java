@@ -257,18 +257,18 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btServicoActionPerformed
 
     private void btFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFuncionarioActionPerformed
-//        CadastroFuncionario funcionario = new CadastroFuncionario(this);
-//
-//        funcionario.setVisible(true);
-//        this.setVisible(false);
+        CadastroFuncionario funcionario = new CadastroFuncionario(this);
+
+        funcionario.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btFuncionarioActionPerformed
 
     private void btClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteActionPerformed
 
-//        CadastroCliente cliente = new CadastroCliente(this);
-//
-//        cliente.setVisible(true);
-//        this.setVisible(false); 
+        CadastroCliente cliente = new CadastroCliente(this);
+
+        cliente.setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_btClienteActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
