@@ -45,30 +45,22 @@ public class CadastroServico extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        campoOS = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         campoDefeito = new javax.swing.JTextField();
-        campoOrcamento = new javax.swing.JFormattedTextField();
         campoDescricao = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         campoStatus = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        campoOrcamento = new javax.swing.JFormattedTextField();
+        campoOS = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setText("Ordem de Serviço");
-
-        try {
-            campoOS.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        campoOS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        campoOS.setText("000");
 
         jButton1.setText("Buscar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,14 +74,6 @@ public class CadastroServico extends javax.swing.JFrame {
         jLabel3.setText("Descrição");
 
         jLabel4.setText("Orçamento");
-
-        try {
-            campoOrcamento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###,##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        campoOrcamento.setText("000,00");
-        campoOrcamento.setToolTipText("");
 
         jLabel5.setText("Status");
 
@@ -109,6 +93,10 @@ public class CadastroServico extends javax.swing.JFrame {
             }
         });
 
+        campoOrcamento.setBackground(new java.awt.Color(108, 122, 137));
+        campoOrcamento.setForeground(new java.awt.Color(228, 241, 254));
+        campoOrcamento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -123,11 +111,12 @@ public class CadastroServico extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(campoStatus, 0, 293, Short.MAX_VALUE))
+                        .addComponent(campoStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(campoOrcamento))
+                        .addComponent(campoOrcamento, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
@@ -138,14 +127,13 @@ public class CadastroServico extends javax.swing.JFrame {
                         .addComponent(campoDefeito))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(campoOS, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)))
-                .addGap(25, 25, 25))
+                        .addComponent(campoOS, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addGap(33, 33, 33)))
+                .addGap(20, 20, 20))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {campoOS, jButton1});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel1, jLabel3, jLabel4, jLabel5});
 
@@ -155,8 +143,8 @@ public class CadastroServico extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(campoOS, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(campoOS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -168,7 +156,7 @@ public class CadastroServico extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(campoOrcamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoOrcamento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -177,12 +165,12 @@ public class CadastroServico extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {campoOS, jLabel1, jLabel2, jLabel3, jLabel4, jLabel5});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel4, jLabel5});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {campoDescricao, campoOrcamento, campoStatus});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {campoDescricao, campoStatus});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -234,7 +222,8 @@ public class CadastroServico extends javax.swing.JFrame {
         Servico s = null;
         
         try{
-            s = dao.buscar((int) campoOS.getValue());
+            int foo1 = Integer.parseInt(campoOS.getText());
+            s = dao.buscar(foo1);
         }catch(IOException ex){
             JOptionPane.showMessageDialog(null, "Falha ao abrir arquivo");
         }catch(ClassNotFoundException ex){
@@ -246,7 +235,7 @@ public class CadastroServico extends javax.swing.JFrame {
         }else{
             campoDefeito.setText(s.getDefeito());
             campoDescricao.setText(s.getDescricao());
-            campoOrcamento.setValue((int) s.getOrdemServico());
+            campoOrcamento.setValue(s.getOrcamento());
             campoStatus.setSelectedItem(s.getStatus());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -289,7 +278,7 @@ public class CadastroServico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField campoDefeito;
     private javax.swing.JTextField campoDescricao;
-    private javax.swing.JFormattedTextField campoOS;
+    private javax.swing.JTextField campoOS;
     private javax.swing.JFormattedTextField campoOrcamento;
     private javax.swing.JComboBox<String> campoStatus;
     private javax.swing.JButton jButton1;
@@ -305,10 +294,17 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private Servico montarObjeto() {
         Servico s = new Servico();
-        
+               
+        int foo = Integer.parseInt(campoOS.getText());
+
+        s.setOrdemServico(foo);
         s.setDescricao(campoDescricao.getText());
         s.setDefeito(campoDefeito.getText());
-        s.setOrcamento((float) campoOrcamento.getValue());
+        
+        float fOcamento = Float.parseFloat(campoOrcamento.getText());      
+        s.setOrcamento(fOcamento);
+        
+        //s.setOrcamento((float) campoOrcamento.getValue());
         s.setStatus("" + campoStatus.getSelectedItem());
         
         return s;
