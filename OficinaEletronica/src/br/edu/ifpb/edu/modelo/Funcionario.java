@@ -2,7 +2,6 @@
 package br.edu.ifpb.edu.modelo;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -21,13 +20,11 @@ public class Funcionario implements Serializable {
         
     }
     
-    public Funcionario(String cpf, String nome, String telefone, float salario,
-            String senha){
+    public Funcionario(String cpf, String nome, String telefone, float salario){
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
         this.salario = salario;
-        this.senha = senha;
     }
 
     public String getCpf() {
@@ -36,14 +33,6 @@ public class Funcionario implements Serializable {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public String getNome() {
@@ -73,12 +62,11 @@ public class Funcionario implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.cpf);
-        hash = 79 * hash + Objects.hashCode(this.nome);
-        hash = 79 * hash + Float.floatToIntBits(this.salario);
-        hash = 79 * hash + Objects.hashCode(this.telefone);
-        hash = 79 * hash + Objects.hashCode(this.senha);
+        int hash = 3;
+        hash = 13 * hash + Objects.hashCode(this.cpf);
+        hash = 13 * hash + Objects.hashCode(this.nome);
+        hash = 13 * hash + Float.floatToIntBits(this.salario);
+        hash = 13 * hash + Objects.hashCode(this.telefone);
         return hash;
     }
 
@@ -106,12 +94,9 @@ public class Funcionario implements Serializable {
         if (!Objects.equals(this.telefone, other.telefone)) {
             return false;
         }
-        if (!Objects.equals(this.senha, other.senha)) {
-            return false;
-        }
         return true;
     }
 
-
+    
     
 }

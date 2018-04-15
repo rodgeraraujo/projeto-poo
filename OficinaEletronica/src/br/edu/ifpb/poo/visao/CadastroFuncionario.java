@@ -196,10 +196,9 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Funcionario não existe");
         }else{
             campoNome.setText(f.getNome());
-            campoCpf.setText(f.getCpf());
             campoSalario.setValue(f.getSalario());
             campoTelefone.setText(f.getTelefone());
-            campoSenha.setText(f.getSenha());
+            //campoSenha.setText(f.getSenha());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -241,12 +240,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         f.setCpf(campoCpf.getText());
         f.setNome(campoNome.getText());
         
-        
         float fSalario = Float.parseFloat(campoSalario.getText());      
         f.setSalario(fSalario);
         
         //f.setSalario((float) campoSalario.getValue());
-        String senha = new String(campoSenha.getPassword());
+        //String senha = new String(campoSenha.getPassword());
         f.setTelefone(campoTelefone.getText());
         
         return f;
@@ -277,6 +275,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CadastroFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
