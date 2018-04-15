@@ -196,6 +196,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Funcionario não existe");
         }else{
             campoNome.setText(f.getNome());
+            campoCpf.setText(f.getCpf());
             campoSalario.setValue(f.getSalario());
             campoTelefone.setText(f.getTelefone());
             campoSenha.setText(f.getSenha());
@@ -239,7 +240,12 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         
         f.setCpf(campoCpf.getText());
         f.setNome(campoNome.getText());
-        f.setSalario((float) campoSalario.getValue());
+        
+        
+        float fSalario = Float.parseFloat(campoSalario.getText());      
+        f.setSalario(fSalario);
+        
+        //f.setSalario((float) campoSalario.getValue());
         String senha = new String(campoSenha.getPassword());
         f.setTelefone(campoTelefone.getText());
         
