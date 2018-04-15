@@ -8,9 +8,10 @@ package br.edu.ifpb.ads.poo.oficinaeletronica.Modelo;
  * @author Lucas Garrido <lucasgf07@gmail.com>
  * @date 18/03/2018
  */
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Funcionario {
+public class Funcionario implements Serializable {
     
     private String nome;
     private String telefone;
@@ -35,6 +36,9 @@ public class Funcionario {
         this.dataAdmissao = dataAdmissao;
         this.CPF = CPF;
         this.id = id;
+    }
+
+    public Funcionario() {
     }
 
     @Override

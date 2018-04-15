@@ -15,9 +15,13 @@ package br.edu.ifpb.ads.poo.oficinaeletronica.Visao;
  * @date 13/04/2018
  */
 
+import br.edu.ifpb.ads.poo.oficinaeletronica.DAO.IntDao;
+import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Cliente;
 import br.edu.ifpb.ads.poo.oficinaeletronica.Modelo.Funcionario;
+import java.io.IOException;
 import java.time.LocalDate;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class CadastroFuncionario extends javax.swing.JFrame {
 
@@ -25,7 +29,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
      * Creates new form RegisterForm
      */
 
-    private CadastroFuncionario dao;
+    private IntDao dao;
     private Principal parent;
     
     public CadastroFuncionario(Principal parent){
@@ -281,13 +285,21 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelRegisterMouseClicked
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
-        String cpf = jFormattedTextField2.getText();
-        String nome = jTextField3.getText();
-        String telefone = jFormattedTextField1.getText();
+
+        Funcionario f = montarObjeto();
         
-        Funcionario funcionarios = new Funcionario(nome, telefone, 950, LocalDate.now(), cpf, 1);
+        try{
+            if(dao.salvar(f)){
+                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+            }else{
+                JOptionPane.showMessageDialog(null, "Funcionario ja estava cadastrado");
+            }
+        }catch(IOException ex){
+            JOptionPane.showMessageDialog(null, "Falha ao abrir arquivo");
+        }catch(ClassNotFoundException ex){
+            JOptionPane.showMessageDialog(null, "Classe não encontrada");
+        }
         
-        System.out.println(funcionarios);
         
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
@@ -362,4 +374,15 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+   
+    private Funcionario montarObjeto(){
+        Funcionario  f = new Funcionario();
+        
+        f.setCPF(jFormattedTextField2.getText());
+        f.setNome(jTextField3.getText());
+        f.setTelefone(jFormattedTextField1.getText());
+        
+        return f;
+    }
+
 }

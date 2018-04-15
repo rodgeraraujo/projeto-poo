@@ -15,9 +15,9 @@ import java.util.Objects;
  *
  * @author Lucas
  */
-public class FuncionarioDao implements Dao<Funcionario> {
+public class FuncionarioDao implements IntDao {
 
-    private List<Funcionario> funcionarios;
+
     
     private File file;
     
@@ -34,7 +34,7 @@ public class FuncionarioDao implements Dao<Funcionario> {
 
         List<Funcionario> funcionarios = listar();
         
-        if(buscar(obj.getId()) == null){
+        if(buscar(obj.getCPF()) == null){
             if(funcionarios.add(obj)){
                 atualizaArquivo(funcionarios);
                 return true;
@@ -61,41 +61,17 @@ public class FuncionarioDao implements Dao<Funcionario> {
     }
 
     @Override
-  public Funcionario buscar(int id) throws IOException, ClassNotFoundException {
+  public Funcionario buscar(String cpf) throws IOException, ClassNotFoundException {
       List<Funcionario> funcionarios = listar();
       
     for(Funcionario e : funcionarios){
-        if(e.getId()== id){
+        if(e.getCPF()== cpf){
             return e;
         }
     }
     return null;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.funcionarios);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final FuncionarioDao other = (FuncionarioDao) obj;
-        if (!Objects.equals(this.funcionarios, other.funcionarios)) {
-            return false;
-        }
-        return true;
-    }
 
     @Override
     public List<Funcionario> listar() throws IOException, ClassNotFoundException {

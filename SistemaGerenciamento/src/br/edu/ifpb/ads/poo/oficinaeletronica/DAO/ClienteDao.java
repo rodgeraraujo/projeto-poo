@@ -17,11 +17,11 @@ import java.util.Objects;
  *
  * @author Lucas
  */
-public class ClienteDao implements Dao<Cliente> {
+public class ClienteDao implements IntDao{
 
     private File file;
     
-    private List<Cliente> clientes;
+//    private List<Cliente> clientes;
 
     public ClienteDao() throws IOException{
         
@@ -35,7 +35,7 @@ public class ClienteDao implements Dao<Cliente> {
     public boolean salvar(Cliente obj) throws IOException, ClassNotFoundException {
         List<Cliente> clientes = listar();
         
-        if(buscarCpf(obj.getCpf()) == null){
+        if(buscar(obj.getCpf()) == null){
             if(clientes.add(obj)){
                 atualizarArquivo(clientes);
                 return true;
@@ -60,22 +60,8 @@ public class ClienteDao implements Dao<Cliente> {
     }
 
     @Override
-    public Cliente buscar(int id) throws IOException, ClassNotFoundException {
+    public Cliente buscar(String cpf) throws IOException, ClassNotFoundException {
         
-        List<Cliente> clientes = listar();
-        
-        for(Cliente e : clientes){
-            if(e.getId() == id){
-                return e;
-            }
-        }
-        return null;
-    }
-    
-    
-    
-    
-    public Cliente buscarCpf(String cpf) throws IOException, ClassNotFoundException{
         List<Cliente> clientes = listar();
         
         for(Cliente e : clientes){
@@ -85,11 +71,25 @@ public class ClienteDao implements Dao<Cliente> {
         }
         return null;
     }
+    
+    
+    
+    
+//    public Cliente buscar(String cpf) throws IOException, ClassNotFoundException{
+//        List<Cliente> clientes = listar();
+//        
+//        for(Cliente e : clientes){
+//            if(e.getCpf() == cpf){
+//                return e;
+//            }
+//        }
+//        return null;
+//    }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.clientes);
+        hash = 11 * hash + Objects.hashCode(this.file);
         return hash;
     }
 
@@ -105,11 +105,12 @@ public class ClienteDao implements Dao<Cliente> {
             return false;
         }
         final ClienteDao other = (ClienteDao) obj;
-        if (!Objects.equals(this.clientes, other.clientes)) {
+        if (!Objects.equals(this.file, other.file)) {
             return false;
         }
         return true;
     }
+
 
     private void atualizarArquivo(List<Cliente> clientes) throws IOException {
         try (ObjectOutputStream out = new ObjectOutputStream(
