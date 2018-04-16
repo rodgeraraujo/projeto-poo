@@ -50,16 +50,12 @@ public class ServicoDaoImpl implements ServicoDao {
     public boolean remover(Servico s) throws IOException, ClassNotFoundException {
         List<Servico> servicos = listar();
         
-        if(buscar(s.getOrdemServico()) == null){
             if(servicos.remove(s)){
                 atualizaArquivo(servicos);
                 return true;
             }else{
                 return false;
             }
-        }else{
-            return false;
-        }
     }
 
     @Override

@@ -47,16 +47,13 @@ public class FuncionarioDaoImpl implements FuncionarioDao {
     public boolean remover(Funcionario f) throws IOException, ClassNotFoundException {
         List<Funcionario> funcionarios = listar();
         
-        if(buscar(f.getCpf()) == null){
+        
             if(funcionarios.remove(f)){
                 atualizaArquivo(funcionarios);
                 return true;
             }else{
                 return false;
             }
-        }else{
-            return false;
-        }
     }
 
     @Override

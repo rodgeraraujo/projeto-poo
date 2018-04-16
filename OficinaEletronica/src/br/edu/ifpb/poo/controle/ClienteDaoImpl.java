@@ -47,17 +47,15 @@ public class ClienteDaoImpl implements ClienteDao {
     public boolean remover(Cliente c) throws IOException, ClassNotFoundException {
         List<Cliente> clientes = listar();
         
-        if(buscar(c.getCpf()) == null){
+
             if(clientes.remove(c)){
                 atualizaArquivo(clientes);
                 return true;
             }else{
                 return false;
             }
-        }else{
-            return false;
-        }
     }
+
 
     @Override
     public Cliente buscar(String cpf) throws IOException, ClassNotFoundException {

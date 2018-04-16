@@ -72,7 +72,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jLabel2.setText("Nome");
 
-        campoSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
+        try {
+            campoSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####,##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel3.setText("Salário");
 
