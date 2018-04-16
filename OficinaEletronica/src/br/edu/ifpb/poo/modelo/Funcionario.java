@@ -3,10 +3,13 @@ package br.edu.ifpb.poo.modelo;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public class Funcionario implements Serializable {
 
@@ -16,10 +19,19 @@ public class Funcionario implements Serializable {
     private String telefone;
     private String senha;
     
+    /**
+     * Construtor default
+     */
     public Funcionario(){
-        
     }
     
+    /**
+     * 
+     * @param cpf cpf do funcionário
+     * @param nome nome do funcionário
+     * @param telefone telefone de contato para o funcionário
+     * @param salario  salario do funcionario
+     */
     public Funcionario(String cpf, String nome, String telefone, String salario){
         this.cpf = cpf;
         this.nome = nome;
@@ -27,35 +39,58 @@ public class Funcionario implements Serializable {
         this.salario = salario;
     }
 
+    /**
+     * @return retorna o cpf
+     */
     public String getCpf() {
         return cpf;
     }
 
+    /**
+     * @param cpf 
+     */
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
+    /**
+     * @return retorna o nome
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * @param nome 
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     * @return retorna salário
+     */
     public String getSalario() {
         return salario;
     }
 
+    /**
+     * @param salario
+     */
     public void setSalario(String salario) {
         this.salario = salario;
     }
 
-
+    /**
+     * @return retorna o telefone
+     */
     public String getTelefone() {
         return telefone;
     }
 
+    /**
+     * @param telefone 
+     */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }

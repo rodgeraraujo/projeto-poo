@@ -9,10 +9,13 @@ package br.edu.ifpb.poo.controle;
 import br.edu.ifpb.poo.modelo.Cliente;
 import java.io.IOException;
 import java.util.List;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public interface ClienteDao {
     public boolean salvar(Cliente c) throws IOException, ClassNotFoundException;
@@ -29,5 +32,11 @@ public interface ClienteDao {
      */
     public Cliente buscar(String cpf) throws IOException, ClassNotFoundException;
     
+    /**
+     * 
+     * @return retorna a lista de clientes
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     public List<Cliente> listar() throws IOException, ClassNotFoundException;
 }

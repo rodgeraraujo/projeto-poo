@@ -2,10 +2,13 @@ package br.edu.ifpb.poo.modelo;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public class User implements Serializable {
 
@@ -14,11 +17,19 @@ public class User implements Serializable {
     private String username;
     private String senha;
     
-    
+    /**
+     * Construtor default
+     */
     public User(){
-        
     }
 
+    /**
+     * 
+     * @param nome nome do usuário
+     * @param sobrenome sobrenome do usuário
+     * @param username nome utilizado para fazer login
+     * @param senha senha ultilizada para fazer login
+     */
     public User(String nome, String sobrenome, String username, String senha) {
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -26,34 +37,58 @@ public class User implements Serializable {
         this.senha = senha;
     }
 
+    /**
+     * @return retorna o nome
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * @param nome 
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     * @return retorna o sobrenome
+     */
     public String getSobrenome() {
         return sobrenome;
     }
 
+    /**
+     * @param sobrenome 
+     */
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
     }
 
+    /**
+     * @return retorna o username
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * @param username 
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * @return retorna a senha
+     */
     public String getSenha() {
         return senha;
     }
 
+    /**
+     * @param senha 
+     */
     public void setSenha(String senha) {
         this.senha = senha;
     }

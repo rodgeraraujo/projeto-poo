@@ -8,10 +8,13 @@ package br.edu.ifpb.poo.controle;
 import br.edu.ifpb.poo.modelo.User;
 import java.io.IOException;
 import java.util.List;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public interface UserDao {
     public boolean salvar(User u) throws IOException, ClassNotFoundException;
@@ -28,5 +31,10 @@ public interface UserDao {
      */
     public User buscar(String username) throws IOException, ClassNotFoundException;
     
+    /**
+     * @return retorna lista de usuários
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     public List<User> listar() throws IOException, ClassNotFoundException;
 }

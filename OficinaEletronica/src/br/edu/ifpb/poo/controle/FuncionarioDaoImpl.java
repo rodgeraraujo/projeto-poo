@@ -10,15 +10,22 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public class FuncionarioDaoImpl implements FuncionarioDao {
 
     private File file;
     
+    /**
+     * Criar arquivo funcionarios.bin
+     * @throws IOException 
+     */
     public FuncionarioDaoImpl() throws IOException{
         file = new File("arquivos\\funcionarios.bin");
         
@@ -27,6 +34,13 @@ public class FuncionarioDaoImpl implements FuncionarioDao {
         }
     }
 
+    /**
+     * Método salvar
+     * @param f
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public boolean salvar(Funcionario f) throws IOException, ClassNotFoundException {
         List<Funcionario> funcionarios = listar();
@@ -43,6 +57,13 @@ public class FuncionarioDaoImpl implements FuncionarioDao {
         }
     }
 
+    /**
+     * Método remover
+     * @param f
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public boolean remover(Funcionario f) throws IOException, ClassNotFoundException {
         List<Funcionario> funcionarios = listar();
@@ -56,6 +77,13 @@ public class FuncionarioDaoImpl implements FuncionarioDao {
             }
     }
 
+    /**
+     * Método buscar
+     * @param cpf
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public Funcionario buscar(String cpf) throws IOException, ClassNotFoundException {
         List<Funcionario> funcionarios = listar();
@@ -68,6 +96,12 @@ public class FuncionarioDaoImpl implements FuncionarioDao {
         return null;
     }
 
+    /**
+     * Método listar
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public List<Funcionario> listar() throws IOException, ClassNotFoundException {
         if(file.length()>0){
@@ -79,6 +113,12 @@ public class FuncionarioDaoImpl implements FuncionarioDao {
         }
     }
 
+    /**
+     * Método para atualizar arquivo
+     * @param funcionarios
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
     private void atualizaArquivo(List<Funcionario> funcionarios) 
             throws FileNotFoundException, IOException {
 

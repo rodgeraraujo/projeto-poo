@@ -4,8 +4,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public class Cliente implements Serializable {
 
@@ -14,11 +18,19 @@ public class Cliente implements Serializable {
     private String endereco;
     private String telefone;
     
-    
+    /**
+     * Costrutor default
+     */
     public Cliente(){
-        
     }
     
+    /**
+     * 
+     * @param cpf cpf do cliente
+     * @param nome nome do cliente
+     * @param endereco endereco do cliente
+     * @param telefone telefone para contato do cliente
+     */
     public Cliente(String cpf, String nome, String endereco, String telefone){
         this.cpf = cpf;
         this.nome = nome;
@@ -26,34 +38,59 @@ public class Cliente implements Serializable {
         this.telefone = telefone;
     }
 
+    /**
+     * @return retorna o cpf
+     */
     public String getCpf() {
         return cpf;
     }
 
+    /**
+     * @param cpf 
+     */
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
+    /**
+     * @return retorna o nome
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * @param nome 
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     * @return retorna o endereço
+     */
     public String getEndereco() {
         return endereco;
     }
 
+    /**
+     * @param endereco 
+     */
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
+    /**
+     * @return retorna o telefone
+     */
     public String getTelefone() {
         return telefone;
     }
 
+    /**
+     * 
+     * @param telefone 
+     */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }

@@ -286,6 +286,10 @@ public class RegisterForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabelMinMouseClicked
 
+    /**
+     * Evento para voltar a tela de login
+     * @param evt 
+     */
     private void jLabelRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRegisterMouseClicked
         LoginForm lgf = new LoginForm();
         lgf.setVisible(true);
@@ -295,7 +299,11 @@ public class RegisterForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabelRegisterMouseClicked
 
-    //Registrar
+
+    /**
+     * Evento para salvar o cadastro do usuário
+     * @param evt 
+     */
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
          if ("".equals(campoNome.getText()) | "".equals(campoSobrenome.getText()) |
                 "".equals(campoUsername.getText()) | "".equals(campoSenha.getText())) {
@@ -322,6 +330,10 @@ public class RegisterForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoUsernameActionPerformed
 
+    /**
+     * Evento para cancelar o cadastro do usuário
+     * @param evt 
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         LoginForm login = new LoginForm();
         login.setVisible(true);

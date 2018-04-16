@@ -8,10 +8,13 @@ package br.edu.ifpb.poo.controle;
 import br.edu.ifpb.poo.modelo.Servico;
 import java.io.IOException;
 import java.util.List;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public interface ServicoDao {
     public boolean salvar(Servico s) throws IOException, ClassNotFoundException;
@@ -28,5 +31,10 @@ public interface ServicoDao {
      */
     public Servico buscar(int ordemServico) throws IOException, ClassNotFoundException;
     
+    /**
+     * @return retorna lista de serviços
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     public List<Servico> listar() throws IOException, ClassNotFoundException;
 }

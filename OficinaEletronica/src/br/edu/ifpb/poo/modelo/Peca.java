@@ -1,5 +1,4 @@
-package br.edu.ifpb.ads.poo.oficinaeletronica.Modelo;
-
+package br.edu.ifpb.poo.modelo;
 /**
  * 
  * @verson 1.0

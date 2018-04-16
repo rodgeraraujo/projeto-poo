@@ -10,15 +10,22 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public class UserDaoImpl implements UserDao {
     
     private File file;
     
+    /**
+     * Criar arquivo users.bin
+     * @throws IOException 
+     */
     public UserDaoImpl() throws IOException{
         file = new File("arquivos\\users.bin");
         
@@ -27,6 +34,13 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * Método salvar
+     * @param u
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public boolean salvar(User u) throws IOException, ClassNotFoundException {
         List<User> users =  listar();
@@ -43,6 +57,13 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * Método remover
+     * @param u
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public boolean remover(User u) throws IOException, ClassNotFoundException {
         List<User> users = listar();
@@ -56,7 +77,13 @@ public class UserDaoImpl implements UserDao {
             }
     }
 
-
+    /**
+     * Método buscar
+     * @param username
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public User buscar(String username) throws IOException, ClassNotFoundException {
         List<User> users = listar();
@@ -69,6 +96,12 @@ public class UserDaoImpl implements UserDao {
         return null;
     }
 
+    /**
+     * Método listar
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public List<User> listar() throws IOException, ClassNotFoundException {
         if(file.length()>0){
@@ -80,6 +113,12 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * Método para atualizar arquivo
+     * @param users
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
     private void atualizaArquivo(List<User> users)
             throws FileNotFoundException, IOException {
         try(ObjectOutputStream out = new ObjectOutputStream(

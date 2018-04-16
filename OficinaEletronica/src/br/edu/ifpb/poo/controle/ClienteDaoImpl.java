@@ -10,15 +10,22 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
- *
- * @author Lucas
+ * 
+ * @verson 1.0
+ * @since version 1.0
+ * @author Rogério Araújo <rogerio.aruajo@mail.com>
+ * @author Lucas Garrido <lucasgf07@gmail.com>
+ * @date 18/03/2018
  */
 public class ClienteDaoImpl implements ClienteDao {
     
     private File file;
     
+    /**
+     * Criar arquivo clientes.bin
+     * @throws IOException 
+     */
     public ClienteDaoImpl() throws IOException{
         file = new File("arquivos\\clientes.bin");
         
@@ -27,6 +34,13 @@ public class ClienteDaoImpl implements ClienteDao {
         }
     }
 
+    /**
+     * Método salvar
+     * @param c
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public boolean salvar(Cliente c) throws IOException, ClassNotFoundException {
         List<Cliente> clientes =  listar();
@@ -43,6 +57,13 @@ public class ClienteDaoImpl implements ClienteDao {
         }
     }
 
+    /**
+     * Método remover
+     * @param c
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public boolean remover(Cliente c) throws IOException, ClassNotFoundException {
         List<Cliente> clientes = listar();
@@ -57,6 +78,13 @@ public class ClienteDaoImpl implements ClienteDao {
     }
 
 
+    /**
+     * Método buscar
+     * @param cpf
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public Cliente buscar(String cpf) throws IOException, ClassNotFoundException {
         List<Cliente> clientes = listar();
@@ -69,6 +97,12 @@ public class ClienteDaoImpl implements ClienteDao {
         return null;
     }
 
+    /**
+     * Método listar
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
     @Override
     public List<Cliente> listar() throws IOException, ClassNotFoundException {
         if(file.length()>0){
@@ -80,6 +114,12 @@ public class ClienteDaoImpl implements ClienteDao {
         }
     }
 
+    /**
+     * Método para atualizar Arquivo
+     * @param clientes
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
     private void atualizaArquivo(List<Cliente> clientes)
             throws FileNotFoundException, IOException {
         try(ObjectOutputStream out = new ObjectOutputStream(
