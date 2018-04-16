@@ -6,7 +6,7 @@
 package br.edu.ifpb.poo.controle;
 
 
-import br.edu.ifpb.edu.modelo.Cliente;
+import br.edu.ifpb.poo.modelo.Cliente;
 import java.io.IOException;
 import java.util.List;
 

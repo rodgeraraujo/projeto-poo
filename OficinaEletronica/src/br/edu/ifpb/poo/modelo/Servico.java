@@ -1,4 +1,4 @@
-package br.edu.ifpb.edu.modelo;
+package br.edu.ifpb.poo.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;

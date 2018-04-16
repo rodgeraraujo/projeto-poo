@@ -1,10 +1,18 @@
 package br.edu.ifpb.poo.visao;
 
-import br.edu.ifpb.edu.modelo.Servico;
+import br.edu.ifpb.poo.modelo.Servico;
 import br.edu.ifpb.poo.controle.ServicoDao;
 import br.edu.ifpb.poo.controle.ServicoDaoImpl;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
@@ -35,6 +43,7 @@ public class CadastroServico extends javax.swing.JFrame {
         this.parents = parents;
         
         initComponents();
+        
     }
 
 
@@ -335,20 +344,25 @@ public class CadastroServico extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelRegisterMouseClicked
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
-     
-        Servico s = montarObjeto();
-        
-        try{
-            if(dao.salvar(s)){
-                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-            }else{
-                JOptionPane.showMessageDialog(null, "Falha ao salvar");
+        if ("".equals(campoOS.getText()) | "".equals(campoDefeito.getText()) |
+            "".equals(campoDescricao.getText()) | "".equals(campoOrcamento.getText())) {
+            JOptionPane.showMessageDialog(null, "Campo vazio!");
+        }else{
+            
+            Servico s = montarObjeto();
+            
+            try{
+                if(dao.salvar(s)){
+                    JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Falha ao salvar");
+                }
+            }catch(IOException ex){
+                JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
+            }catch(ClassNotFoundException ex){
+                JOptionPane.showMessageDialog(null, "Classe não encontrada");
             }
-        }catch(IOException ex){
-            JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
-        }catch(ClassNotFoundException ex){
-            JOptionPane.showMessageDialog(null, "Classe não encontrada");
-        }
+        }    
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
     private void jButtonRegister1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegister1ActionPerformed

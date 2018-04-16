@@ -15,7 +15,7 @@ package br.edu.ifpb.poo.visao;
  * @date 13/04/2018
  */
 
-import br.edu.ifpb.edu.modelo.User;
+import br.edu.ifpb.poo.modelo.User;
 import br.edu.ifpb.poo.controle.UserDao;
 import br.edu.ifpb.poo.controle.UserDaoImpl;
 import java.io.IOException;

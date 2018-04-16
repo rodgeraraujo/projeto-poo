@@ -5,7 +5,7 @@
  */
 package br.edu.ifpb.poo.controle;
 
-import br.edu.ifpb.edu.modelo.Servico;
+import br.edu.ifpb.poo.modelo.Servico;
 import java.io.IOException;
 import java.util.List;
 

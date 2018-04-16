@@ -1,6 +1,6 @@
 package br.edu.ifpb.poo.controle;
 
-import br.edu.ifpb.edu.modelo.Funcionario;
+import br.edu.ifpb.poo.modelo.Funcionario;
 import java.io.IOException;
 import java.util.List;
 

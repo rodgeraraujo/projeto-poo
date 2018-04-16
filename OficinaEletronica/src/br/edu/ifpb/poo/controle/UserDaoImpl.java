@@ -1,6 +1,6 @@
 package br.edu.ifpb.poo.controle;
 
-import br.edu.ifpb.edu.modelo.User;
+import br.edu.ifpb.poo.modelo.User;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

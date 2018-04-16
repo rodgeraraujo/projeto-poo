@@ -2,7 +2,7 @@ package br.edu.ifpb.poo.visao;
 
 
 
-import br.edu.ifpb.edu.modelo.Funcionario;
+import br.edu.ifpb.poo.modelo.Funcionario;
 import br.edu.ifpb.poo.controle.FuncionarioDao;
 import br.edu.ifpb.poo.controle.FuncionarioDaoImpl;
 import java.awt.event.KeyEvent;
@@ -310,21 +310,24 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelMinMouseClicked
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
+        if ("".equals(campoCpf.getText()) | "".equals(campoNome.getText()) |
+                "".equals(campoSalario.getText()) | "".equals(campoTelefone.getText())) {
+            JOptionPane.showMessageDialog(null, "Campo vazio!");
+        }else{
+            Funcionario f = montarObjeto();
 
-        Funcionario f = montarObjeto();
-        
-        try{
-            if(dao.salvar(f)){
-                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-            }else{
-                JOptionPane.showMessageDialog(null, "Falha ao salvar");
+            try{
+                if(dao.salvar(f)){
+                    JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Falha ao salvar");
+                }
+            }catch(IOException ex){
+                JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
+            }catch(ClassNotFoundException ex){
+                JOptionPane.showMessageDialog(null, "Classe não encontrada");
             }
-        }catch(IOException ex){
-            JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
-        }catch(ClassNotFoundException ex){
-            JOptionPane.showMessageDialog(null, "Classe não encontrada");
         }
-        
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
     private void jButtonRegister1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegister1ActionPerformed

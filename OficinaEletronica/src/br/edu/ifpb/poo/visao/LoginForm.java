@@ -1,7 +1,7 @@
 package br.edu.ifpb.poo.visao;
 
 
-import br.edu.ifpb.edu.modelo.User;
+import br.edu.ifpb.poo.modelo.User;
 import br.edu.ifpb.poo.controle.UserDao;
 import br.edu.ifpb.poo.controle.UserDaoImpl;
 import java.io.IOException;

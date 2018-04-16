@@ -1,6 +1,6 @@
 package br.edu.ifpb.poo.visao;
 
-import br.edu.ifpb.edu.modelo.Cliente;
+import br.edu.ifpb.poo.modelo.Cliente;
 import br.edu.ifpb.poo.controle.ClienteDao;
 import br.edu.ifpb.poo.controle.ClienteDaoImpl;
 import java.io.IOException;
@@ -312,17 +312,23 @@ public class CadastroCliente extends javax.swing.JFrame {
     
         Cliente c = montarObjeto();
         
-        try{
-            if(dao.salvar(c)){
-                JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-            }else{
-                JOptionPane.showMessageDialog(null, "Falha ao salvar");
-            }
-        }catch(IOException ex){
-            JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
-        }catch(ClassNotFoundException ex){
-            JOptionPane.showMessageDialog(null, "Classe não encontrada");
+        if ("".equals(campoCpf.getText()) | "".equals(campoNome.getText()) |
+                "".equals(campoTelefone.getText()) | "".equals(campoEndereco.getText())) {
+            JOptionPane.showMessageDialog(null, "Campo vazio!");
+        }else{
+           try{
+                if(dao.salvar(c)){
+                    JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Falha ao salvar");
+                }
+            }catch(IOException ex){
+                JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
+            }catch(ClassNotFoundException ex){
+                JOptionPane.showMessageDialog(null, "Classe não encontrada");
+            } 
         }
+        
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
     private void jButtonRegister1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegister1ActionPerformed
