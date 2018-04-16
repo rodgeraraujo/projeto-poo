@@ -345,7 +345,7 @@ public class CadastroServico extends javax.swing.JFrame {
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
         if ("".equals(campoOS.getText()) | "".equals(campoDefeito.getText()) |
-            "".equals(campoDescricao.getText()) | "".equals(campoOrcamento.getText())) {
+            "".equals(campoDescricao.getText())) {
             JOptionPane.showMessageDialog(null, "Campo vazio!");
         }else{
             

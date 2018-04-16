@@ -161,6 +161,11 @@ public class RegisterForm extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabelRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelRegister.setForeground(new java.awt.Color(255, 255, 255));
@@ -292,25 +297,37 @@ public class RegisterForm extends javax.swing.JFrame {
 
     //Registrar
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
-        User c = montarObjeto();
-        
-        try{
-            if(dao.salvar(c)){
-                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
-            }else{
-                JOptionPane.showMessageDialog(null, "Falha ao cadastrar o novo usuário");
+         if ("".equals(campoNome.getText()) | "".equals(campoSobrenome.getText()) |
+                "".equals(campoUsername.getText()) | "".equals(campoSenha.getText())) {
+            JOptionPane.showMessageDialog(null, "Campo vazio!");
+        }else{
+            User c = montarObjeto();
+
+            try{
+                if(dao.salvar(c)){
+                    JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Falha ao cadastrar o novo usuário");
+                }
+            }catch(IOException ex){
+                JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
+            }catch(ClassNotFoundException ex){
+                JOptionPane.showMessageDialog(null, "Classe não encontrada");
             }
-        }catch(IOException ex){
-            JOptionPane.showMessageDialog(null, "Falha ao ler arquivo");
-        }catch(ClassNotFoundException ex){
-            JOptionPane.showMessageDialog(null, "Classe não encontrada");
-        }
+         }
 
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
     private void campoUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoUsernameActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        LoginForm login = new LoginForm();
+        login.setVisible(true);
+       
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
