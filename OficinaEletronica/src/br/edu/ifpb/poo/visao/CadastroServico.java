@@ -94,7 +94,7 @@ public class CadastroServico extends javax.swing.JFrame {
         jLabelClose.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelClose.setForeground(new java.awt.Color(255, 255, 255));
         jLabelClose.setText("X");
-        jLabelClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelClose.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelCloseMouseClicked(evt);
@@ -108,7 +108,7 @@ public class CadastroServico extends javax.swing.JFrame {
         jLabelMin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelMin.setForeground(new java.awt.Color(255, 255, 255));
         jLabelMin.setText("-");
-        jLabelMin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelMin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelMin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelMinMouseClicked(evt);
@@ -168,7 +168,7 @@ public class CadastroServico extends javax.swing.JFrame {
         jLabelRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelRegister.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRegister.setText("Clique aqui para voltar");
-        jLabelRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelRegister.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelRegisterMouseClicked(evt);
@@ -222,6 +222,11 @@ public class CadastroServico extends javax.swing.JFrame {
         campoOS.setBackground(new java.awt.Color(108, 122, 137));
         campoOS.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         campoOS.setForeground(new java.awt.Color(228, 241, 254));
+        campoOS.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoOSKeyTyped(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(236, 240, 241));
@@ -418,6 +423,16 @@ public class CadastroServico extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Classe não encontrada");
         } 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void campoOSKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoOSKeyTyped
+        
+        char vChar = evt.getKeyChar();
+        if (!(Character.isDigit(vChar)
+                || (vChar == KeyEvent.VK_BACK_SPACE)
+                || (vChar == KeyEvent.VK_DELETE))) {
+            evt.consume(); 
+        }
+    }//GEN-LAST:event_campoOSKeyTyped
     
     
     private Servico montarObjeto() {

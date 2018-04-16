@@ -308,6 +308,10 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabelMinMouseClicked
 
+    /**
+     * Evento salvar cliente no arquivo clientes.bin
+     * @param evt 
+     */
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
     
         Cliente c = montarObjeto();
@@ -331,6 +335,10 @@ public class CadastroCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
+    /**
+     * Evento buscar cliente cadastrado no arquivo clientes.bin
+     * @param evt 
+     */
     private void jButtonRegister1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegister1ActionPerformed
         
         Cliente c = null;
@@ -356,6 +364,10 @@ public class CadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoEnderecoActionPerformed
 
+    /**
+     * Evento para excluir cliente cadastrado do arquivo clientes.bin
+     * @param evt 
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         Cliente c = montarObjeto();
@@ -374,6 +386,10 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * Evento retornar para a janela principal
+     * @param evt 
+     */
     private void jLabelRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRegisterMouseClicked
         Principal principal = new Principal();
         principal.setVisible(true);

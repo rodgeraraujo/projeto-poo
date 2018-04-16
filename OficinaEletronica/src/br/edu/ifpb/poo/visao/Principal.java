@@ -1,11 +1,5 @@
 package br.edu.ifpb.poo.visao;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * 
  * @since 1.0
@@ -262,7 +256,10 @@ public class Principal extends javax.swing.JFrame {
         this.setState(JFrame.ICONIFIED);
 
     }//GEN-LAST:event_jLabelMinMouseClicked
-
+    /**
+     * Evento para abrir janela de cadastro de Serviços
+     * @param evt 
+     */
     private void btServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoActionPerformed
         CadastroServico servico = new CadastroServico();
         servico.setVisible(true);
@@ -270,6 +267,10 @@ public class Principal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btServicoActionPerformed
 
+    /**
+     * Evento para abrir janela de cadastro de Funcionários
+     * @param evt 
+     */
     private void btFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFuncionarioActionPerformed
         CadastroFuncionario funcionario = new CadastroFuncionario();
 
@@ -277,6 +278,10 @@ public class Principal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btFuncionarioActionPerformed
 
+    /**
+     * Evento para abrir a janela de cadastro de Cliente
+     * @param evt 
+     */
     private void btClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteActionPerformed
 
         CadastroCliente cliente = new CadastroCliente();
@@ -285,6 +290,10 @@ public class Principal extends javax.swing.JFrame {
         this.setVisible(false); 
     }//GEN-LAST:event_btClienteActionPerformed
 
+    /**
+     * Evento de logout do sistema
+     * @param evt 
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         LoginForm login = new LoginForm();

@@ -189,6 +189,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         campoSalario.setBackground(new java.awt.Color(108, 122, 137));
         campoSalario.setForeground(new java.awt.Color(228, 241, 254));
         campoSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.00"))));
+        campoSalario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoSalarioActionPerformed(evt);
+            }
+        });
         campoSalario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 campoSalarioKeyTyped(evt);
@@ -206,7 +211,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jLabelRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelRegister.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRegister.setText("Clique aqui para voltar");
-        jLabelRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelRegister.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelRegisterMouseClicked(evt);
@@ -309,6 +314,10 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabelMinMouseClicked
 
+    /**
+     * Evento para salvar um funcionario no arquivo funcionarios.bin
+     * @param evt 
+     */
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
         if ("".equals(campoCpf.getText()) | "".equals(campoNome.getText()) |
                 "".equals(campoSalario.getText()) | "".equals(campoTelefone.getText())) {
@@ -330,6 +339,10 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
+    /**
+     * Evento para buscar um Funcionario cadastrado no arquivo funcionarios.bin
+     * @param evt 
+     */
     private void jButtonRegister1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegister1ActionPerformed
         
         Funcionario c = null;
@@ -353,6 +366,10 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonRegister1ActionPerformed
 
+    /**
+     * Evento para excluir um funcionario cadastrado no arquivo funcionarios.bin
+     * @param evt 
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         Funcionario c = montarObjeto();
@@ -382,11 +399,20 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoSalarioKeyTyped
 
+    
+    /**
+     * Evento para retornar a janela principal
+     * @param evt 
+     */
     private void jLabelRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRegisterMouseClicked
         Principal principal = new Principal();
         principal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelRegisterMouseClicked
+
+    private void campoSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSalarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoSalarioActionPerformed
     
      private Funcionario montarObjeto(){
         Funcionario f = new Funcionario();
