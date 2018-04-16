@@ -12,7 +12,7 @@ public class Servico implements Serializable {
 
     private String defeito;
     private String descricao;
-    private float orcamento;
+    private String orcamento;
     private LocalDate dataEntrada;
     private String status;
     private int ordemServico;
@@ -23,13 +23,13 @@ public class Servico implements Serializable {
         
     }
     
-    public Servico(String defeito, String descricao, float orcamento, 
+    public Servico(String defeito, String descricao, String orcamento, 
             String status, int ordemServico){
         this.defeito = defeito;
         this.descricao = descricao;
         this.orcamento = orcamento;
         this.status = status;
-        this.orcamento = ordemServico;
+        this.ordemServico = ordemServico;
     }
 
     public String getDefeito() {
@@ -48,11 +48,11 @@ public class Servico implements Serializable {
         this.descricao = descricao;
     }
 
-    public float getOrcamento() {
+    public String getOrcamento() {
         return orcamento;
     }
 
-    public void setOrcamento(float orcamento) {
+    public void setOrcamento(String orcamento) {
         this.orcamento = orcamento;
     }
 
@@ -82,13 +82,13 @@ public class Servico implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 83 * hash + Objects.hashCode(this.defeito);
-        hash = 83 * hash + Objects.hashCode(this.descricao);
-        hash = 83 * hash + Float.floatToIntBits(this.orcamento);
-        hash = 83 * hash + Objects.hashCode(this.dataEntrada);
-        hash = 83 * hash + Objects.hashCode(this.status);
-        hash = 83 * hash + this.ordemServico;
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.defeito);
+        hash = 37 * hash + Objects.hashCode(this.descricao);
+        hash = 37 * hash + Objects.hashCode(this.orcamento);
+        hash = 37 * hash + Objects.hashCode(this.dataEntrada);
+        hash = 37 * hash + Objects.hashCode(this.status);
+        hash = 37 * hash + this.ordemServico;
         return hash;
     }
 
@@ -104,9 +104,6 @@ public class Servico implements Serializable {
             return false;
         }
         final Servico other = (Servico) obj;
-        if (Float.floatToIntBits(this.orcamento) != Float.floatToIntBits(other.orcamento)) {
-            return false;
-        }
         if (this.ordemServico != other.ordemServico) {
             return false;
         }
@@ -114,6 +111,9 @@ public class Servico implements Serializable {
             return false;
         }
         if (!Objects.equals(this.descricao, other.descricao)) {
+            return false;
+        }
+        if (!Objects.equals(this.orcamento, other.orcamento)) {
             return false;
         }
         if (!Objects.equals(this.status, other.status)) {
@@ -124,6 +124,8 @@ public class Servico implements Serializable {
         }
         return true;
     }
+
+    
     
     
 }

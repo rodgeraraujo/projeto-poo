@@ -12,7 +12,7 @@ public class Funcionario implements Serializable {
 
     private String cpf;
     private String nome;
-    private float salario;
+    private String salario;
     private String telefone;
     private String senha;
     
@@ -20,7 +20,7 @@ public class Funcionario implements Serializable {
         
     }
     
-    public Funcionario(String cpf, String nome, String telefone, float salario){
+    public Funcionario(String cpf, String nome, String telefone, String salario){
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
@@ -43,11 +43,11 @@ public class Funcionario implements Serializable {
         this.nome = nome;
     }
 
-    public float getSalario() {
+    public String getSalario() {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public void setSalario(String salario) {
         this.salario = salario;
     }
 
@@ -62,11 +62,12 @@ public class Funcionario implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 13 * hash + Objects.hashCode(this.cpf);
-        hash = 13 * hash + Objects.hashCode(this.nome);
-        hash = 13 * hash + Float.floatToIntBits(this.salario);
-        hash = 13 * hash + Objects.hashCode(this.telefone);
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.cpf);
+        hash = 67 * hash + Objects.hashCode(this.nome);
+        hash = 67 * hash + Objects.hashCode(this.salario);
+        hash = 67 * hash + Objects.hashCode(this.telefone);
+        hash = 67 * hash + Objects.hashCode(this.senha);
         return hash;
     }
 
@@ -82,20 +83,25 @@ public class Funcionario implements Serializable {
             return false;
         }
         final Funcionario other = (Funcionario) obj;
-        if (Float.floatToIntBits(this.salario) != Float.floatToIntBits(other.salario)) {
-            return false;
-        }
         if (!Objects.equals(this.cpf, other.cpf)) {
             return false;
         }
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
+        if (!Objects.equals(this.salario, other.salario)) {
+            return false;
+        }
         if (!Objects.equals(this.telefone, other.telefone)) {
+            return false;
+        }
+        if (!Objects.equals(this.senha, other.senha)) {
             return false;
         }
         return true;
     }
+
+   
 
     
     
